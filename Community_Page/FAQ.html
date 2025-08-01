@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NanumSquare:wght@300;400;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yoon+Childfundkorea:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=HanwhaGothic:wght@400&display=swap" />
+
+    <style>
+        .symbol-icon {
+            width: 26.2px;
+            position: relative;
+            height: 26.2px;
+        }
+
+        .logo-bold {
+            width: 65.5px;
+            position: relative;
+            height: 22.3px;
+        }
+
+        .symbol-parent {
+            width: 96.8px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0px;
+        }
+
+        .div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .caption1-nanumsquare {
+            position: relative;
+            line-height: 20px;
+            font-weight: 800;
+        }
+
+        .headermenu {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            color: #999;
+        }
+
+        .div1 {
+            position: relative;
+            line-height: 20px;
+            font-weight: 300;
+        }
+
+        .caption1-nanumsquare1 {
+            position: relative;
+            line-height: 20px;
+        }
+
+        .headermenu1 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .headermenu2 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            color: #000;
+        }
+
+        .headermenu-parent {
+            width: 439px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0px;
+        }
+
+        .parent {
+            width: 1240px;
+            height: 64px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0px;
+        }
+
+        .header-inner {
+            width: 1920px;
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header {
+            position: absolute;
+            top: 0px;
+            left: calc(50% - 960px);
+            background-color: #fff;
+            border-bottom: 1px solid #dcdcdc;
+            box-sizing: border-box;
+            height: 64px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .icon-chat {
+            width: 40px;
+            position: relative;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .title-nanumsquare {
+            position: relative;
+            font-weight: 800;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .q {
+            align-self: stretch;
+            position: relative;
+            line-height: 140%;
+        }
+
+        .q-wrapper {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            flex-shrink: 0;
+        }
+
+        .subtitle2-nanumsquare {
+            position: relative;
+            font-size: 18px;
+            line-height: 140%;
+            font-weight: 800;
+            font-family: NanumSquare;
+            color: #000;
+            text-align: left;
+        }
+
+        .frame-parent {
+            width: 672px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .frame-icon {
+            width: 65px;
+            height: 65px;
+            overflow: hidden;
+            flex-shrink: 0;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .text5 {
+            align-self: stretch;
+            background-color: #f9f9f9;
+            height: 65px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0px;
+            cursor: pointer;
+            transition: background-color 0.4s ease;
+        }
+
+        .text-wrapper {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        
+        .text-wrapper.active .frame-icon {
+            transform: rotate(180deg);
+        }
+        
+        .text-wrapper.active .text5,
+        .text-wrapper.active .text9 {
+            background-color: #fff;
+        }
+
+
+        .b {
+            position: relative;
+            font-size: 14px;
+            line-height: 140%;
+            font-family: NanumSquare;
+            color: #000;
+        }
+
+        .text9 {
+            color: #fae100;
+            background-color: #f9f9f9;
+            width: 100%;
+            box-sizing: border-box;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 30px;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out, background-color 0.4s ease;
+        }
+
+        .text-wrapper.active .text9 {
+            max-height: 700px; /* Increased to ensure large images fit */
+            padding: 20px 10px;
+            transition: max-height 0.5s ease-in, padding 0.5s ease-in, background-color 0.4s ease;
+        }
+
+        .answer-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+
+        .list {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .iconexlightleft-square {
+            width: 24px;
+            position: relative;
+            height: 24px;
+        }
+
+        .b1 {
+            position: relative;
+            line-height: 140%;
+            color: #000;
+        }
+
+        .b2 {
+            position: relative;
+            line-height: 140%;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .iconexlightright-square {
+            width: 24px;
+            position: relative;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .page {
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            font-size: 14px;
+            color: #dcdcdc;
+            font-family: NanumSquare;
+        }
+
+        .icon-size {
+            width: 16px;
+            height: 16px;
+        }
+
+        .div10 {
+            position: relative;
+            line-height: 150%;
+            display: none;
+        }
+
+        .pagination-atomic {
+            width: 35px;
+            background-color: #fff;
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            height: 35px;
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 8px;
+            font-size: 13.6px;
+            color: #8a949e;
+        }
+
+        .container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0%;
+            right: 0%;
+            bottom: 0%;
+            left: 0%;
+            opacity: 0.1;
+        }
+
+        .vector-icon {
+            position: absolute;
+            height: 66.88%;
+            width: 40%;
+            top: 16.67%;
+            right: 34.17%;
+            bottom: 16.46%;
+            left: 25.83%;
+            max-width: 100%;
+            overflow: hidden;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .iconarrow-left {
+            width: 16px;
+            position: relative;
+            height: 16px;
+        }
+
+        .icon-size1 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .pagination-atomic1 {
+            width: 35px;
+            background-color: #fff;
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            height: 35px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 8px;
+            font-size: 16px;
+            color: #8a949e;
+        }
+
+        .div12 {
+            position: relative;
+            line-height: 150%;
+        }
+
+        .number {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pagination-atomic2 {
+            width: 35px;
+            background-color: #efefef;
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            height: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+        }
+
+        .pagination-atomic3 {
+            width: 35px;
+            background-color: #fff;
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+            height: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vector-icon1 {
+            position: absolute;
+            height: 66.88%;
+            width: 40%;
+            top: 16.67%;
+            right: 25.83%;
+            bottom: 16.46%;
+            left: 34.17%;
+            max-width: 100%;
+            overflow: hidden;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .pagination-atomic12 {
+            width: 35px;
+            background-color: #fff;
+            height: 35px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 8px;
+            box-sizing: border-box;
+            font-size: 13.6px;
+            color: #464c53;
+        }
+
+        .pagination-atomic13 {
+            width: 35px;
+            border-radius: 3.2px;
+            background-color: #fff;
+            height: 35px;
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 8px;
+            box-sizing: border-box;
+            font-size: 13.6px;
+            color: #464c53;
+        }
+
+        .page1 {
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .page-wrapper {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .div9 {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.5);
+            font-family: HanwhaGothic;
+        }
+
+        .contents {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 50px;
+            text-align: center;
+            font-size: 40px;
+            color: #999;
+            font-family: 'Yoon Childfundkorea';
+        }
+
+        .title-parent {
+            /* MODIFIED: Changed from absolute positioning to relative for document flow */
+            position: relative;
+            margin: 0 auto; /* Centers the content block */
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 64px 0px;
+            box-sizing: border-box;
+            gap: 64px;
+            font-size: 30px;
+            color: #000;
+        }
+
+        .wrapper {
+            border-right: 1px solid #b9b9b9;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 16px 0px 0px;
+        }
+
+        .frame {
+            border-right: 1px solid #b9b9b9;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 16px;
+        }
+
+        .wrapper1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 16px;
+        }
+
+        .frame-parent8 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .e-jejecommsgmailcom {
+            position: relative;
+        }
+
+        .t-070-4252-5571-parent {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 24px;
+        }
+
+        .frame-parent7 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        .parent1 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 24px;
+            font-size: 15px;
+            color: #222;
+        }
+
+        .frame-parent6 {
+            width: 1240px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 50px 0px;
+            box-sizing: border-box;
+            gap: 21px;
+        }
+
+        .footer-inner {
+            /* MODIFIED: Removed absolute positioning to follow document flow */
+            border-top: 1px solid #dcdcdc;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .footer {
+            /* MODIFIED: Changed from absolute positioning to relative for document flow */
+            position: relative; 
+            background-color: #fff;
+            width: 100%; /* Changed for better responsiveness */
+            height: 194px;
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.85);
+        }
+
+        .faq1 {
+            position: relative;
+            line-height: 20px;
+            font-weight: 800;
+            color: #fae100;
+        }
+
+        .parent2 {
+            align-self: stretch;
+            width: 439px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0px;
+        }
+
+        .frame-wrapper {
+            width: 1240px;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header-child {
+            align-self: stretch;
+            width: 1920px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header1 {
+            position: absolute;
+            top: 64px;
+            left: calc(50% - 960px);
+            background-color: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            color: #fff;
+        }
+
+        .faq {
+            width: 100%;
+            position: relative;
+            background-color: #fff;
+            /* MODIFIED: Replaced fixed height with padding. */
+            /* This allows the page to grow dynamically when FAQ items are opened, */
+            /* and removes the large, static gap above the footer. */
+            padding-top: 114px; /* Space for the two fixed headers (64px + 50px) */
+            padding-bottom: 80px; /* Space above the footer */
+            overflow: hidden;
+            text-align: left;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.5);
+            font-family: NanumSquare;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq">
+        <div class="header">
+            <div class="header-inner">
+                <div class="parent">
+                    <div class="div">
+                        <div class="symbol-parent">
+                            <img class="symbol-icon" alt="" src="./FAQ_Images/symbol.png">
+                            <img class="logo-bold" alt="" src="./FAQ_Images/qr_alliym_name.png">
+                        </div>
+                    </div>
+                    <div class="headermenu-parent">
+                        <div class="headermenu">
+                            <div class="div">
+                                <div class="caption1-nanumsquare">QR알리미란?</div>
+                            </div>
+                        </div>
+                        <div class="div1">|</div>
+                        <div class="headermenu1">
+                            <div class="div">
+                                <b class="caption1-nanumsquare1">QR알리미 사용하기</b>
+                            </div>
+                        </div>
+                        <div class="div1">|</div>
+                        <div class="headermenu2">
+                            <div class="div">
+                                <b class="caption1-nanumsquare1">커뮤니티</b>
+                            </div>
+                        </div>
+                        <div class="div1">|</div>
+                        <div class="headermenu1">
+                            <div class="div">
+                                <b class="caption1-nanumsquare1">B2B</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header1">
+            <div class="header-child">
+                <div class="frame-wrapper">
+                    <div class="parent2">
+                        <b class="caption1-nanumsquare1">리뷰</b>
+                        <b class="caption1-nanumsquare1">쿠폰 네비게이션</b>
+                        <div class="faq1">FAQ</div>
+                        <b class="caption1-nanumsquare1">문의하기</b>
+                        <b class="caption1-nanumsquare1">소식</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title-parent">
+            <div class="title">
+                <img class="icon-chat" alt="" src="./FAQ_Images/icon_chat.png">
+                <div class="div">
+                    <div class="title-nanumsquare">FAQ</div>
+                </div>
+            </div>
+            <div class="contents">
+                <div class="list">
+                    <!-- FAQ Item 1 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">QR알리미 앱은 어디서 다운받을 수 있나요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                        <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A0.png" alt="Answer 0"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">쿠폰등록은 어떻게 하나요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A1.png" alt="Answer 1"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">쿠폰구매는 어디서 하나요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A2.png" alt="Answer 2"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">쿠폰 유효기간이 있나요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A3.png" alt="Answer 3"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">기기 한대당 한대의 차량만 이용이 가능한가요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A4.png" alt="Answer 4"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">QR코드 출력은 직접해야 하나요? 직접한다면 어떻게 해야하나요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A5.png" alt="Answer 5"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 7 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">차량 한대에 여러명의 운전자등록이 가능한가요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A6.png" alt="Answer 6"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 8 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">차량에 붙여놓은 QR코드 스캔시 “전송실패"가 뜹니다.</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A7.png" alt="Answer 7"></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 9 -->
+                    <div class="text-wrapper">
+                        <div class="text5">
+                            <div class="frame-parent">
+                                <div class="q-wrapper"><div class="q">Q</div></div>
+                                <div class="subtitle2-nanumsquare">QR코드 스캔시, 이동요청자도 앱을 설치해야 하나요?</div>
+                            </div>
+                            <img class="frame-icon" alt="" src="./FAQ_Images/Frame.png">
+                        </div>
+                         <div class="text9">
+                            <div class="answer-content"><img src="./FAQ_Images/A8.png" alt="Answer 8"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                    <img class="iconexlightleft-square" alt="" src="Iconex/Light/Left square.svg">
+                    <div class="group">
+                        <b class="b1">1</b>
+                        <b class="b2">/</b>
+                        <b class="b2">5</b>
+                    </div>
+                    <img class="iconexlightright-square" alt="" src="Iconex/Light/Right square.png">
+                </div>
+                <div class="div9">
+                    <div class="page-wrapper">
+                        <div class="page1">
+                            <div class="pagination-atomic">
+                                <img class="icon-size" alt="" src="icon_size.svg">
+                                <div class="div10">이전</div>
+                            </div>
+                            <div class="pagination-atomic1">
+                                <div class="icon-size1">
+                                    <div class="iconarrow-left">
+                                        <div class="container"></div>
+                                        <img class="vector-icon" alt="" src="Vector.svg">
+                                    </div>
+                                </div>
+                                <div class="div10">이전</div>
+                            </div>
+                            <div class="pagination-atomic2"><div class="number"><div class="div12">1</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">2</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">3</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">4</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">5</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">6</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">7</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">8</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">9</div></div></div>
+                            <div class="pagination-atomic3"><div class="number"><div class="div12">10</div></div></div>
+                            <div class="pagination-atomic12">
+                                <div class="div10">다음</div>
+                                <div class="icon-size1">
+                                    <div class="iconarrow-left">
+                                        <div class="container"></div>
+                                        <img class="vector-icon1" alt="" src="Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagination-atomic13">
+                                <div class="div10">다음</div>
+                                <img class="icon-size" alt="" src="icon_size.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="frame-parent6">
+                    <div class="frame-parent7">
+                        <div class="frame-parent8">
+                            <div class="headermenu1">
+                                <div class="wrapper"><div class="e-jejecommsgmailcom">(주)제제컴즈</div></div>
+                                <div class="frame"><div class="e-jejecommsgmailcom">대표자 : 김준강</div></div>
+                                <div class="wrapper1"><div class="e-jejecommsgmailcom">사업자등록번호 : 641-88-00828</div></div>
+                            </div>
+                            <div class="headermenu1"><div class="e-jejecommsgmailcom">통신판매업신고 : 제2021-성남수정-1335호</div></div>
+                            <div class="e-jejecommsgmailcom">13449 경기 성남시 수정구 달래내로 46, 성남글로벌융합센터 A동 405호</div>
+                        </div>
+                        <div class="t-070-4252-5571-parent">
+                            <div class="e-jejecommsgmailcom">T. 070-4252-5571</div>
+                            <div class="e-jejecommsgmailcom">E. jejecomms@gmail.com</div>
+                            <div class="e-jejecommsgmailcom">F. 0508-910-5575</div>
+                        </div>
+                    </div>
+                    <div class="parent1">
+                        <b class="e-jejecommsgmailcom">회사소개</b>
+                        <b class="e-jejecommsgmailcom">이용약관</b>
+                        <b class="e-jejecommsgmailcom">개인정보처리방침</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.text-wrapper');
+
+            faqItems.forEach(item => {
+                const questionHeader = item.querySelector('.text5');
+
+                if (questionHeader) {
+                    questionHeader.addEventListener('click', () => {
+                        const wasActive = item.classList.contains('active');
+
+                        // This part makes sure only one FAQ item is open at a time.
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                        
+                        // This toggles the clicked item.
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

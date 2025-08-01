@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NanumSquare:wght@300;400;500;600;700;800&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=HanwhaGothic:wght@400;700&display=swap" />
+  	
+  	<style>
+		body, html {
+			margin: 0;
+			padding: 0;
+			font-family: NanumSquare, sans-serif;
+		}
+
+		.div1 {
+			position: relative;
+			line-height: 20px;
+			font-weight: 800;
+			color: #fae100;
+		}
+		.b {
+			position: relative;
+			line-height: 20px;
+		}
+		.parent {
+			align-self: stretch;
+			width: 439px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0px;
+		}
+		.frame-wrapper {
+			width: 1240px;
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-end;
+		}
+		.header-inner {
+			align-self: stretch;
+			width: 1920px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.header {
+			position: absolute;
+			top: 64px;
+			left: calc(50% - 960px);
+			background-color: rgba(0, 0, 0, 0.85);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			box-sizing: border-box;
+			height: 50px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.symbol-icon {
+			width: 26.2px;
+			position: relative;
+			height: 26.2px;
+		}
+		.logo-bold {
+			width: 65.5px;
+			position: relative;
+			height: 22.3px;
+		}
+		.symbol-parent {
+			width: 96.8px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0px;
+		}
+		.caption1-nanumsquare {
+			position: relative;
+			line-height: 20px;
+			font-weight: 800;
+		}
+		.text {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		.headermenu {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			color: #999;
+		}
+		.div3 {
+			position: relative;
+			line-height: 20px;
+			font-weight: 300;
+		}
+		.headermenu2 {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			color: #000;
+		}
+		.headermenu-parent {
+			width: 439px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0px;
+		}
+		.group {
+			width: 1240px;
+			height: 64px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0px;
+		}
+		.header-child {
+			width: 1920px;
+			height: 64px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.header1 {
+			position: absolute;
+			top: 0px;
+			left: calc(50% - 960px);
+			background-color: #fff;
+			border-bottom: 1px solid #dcdcdc;
+			box-sizing: border-box;
+			height: 64px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			color: rgba(0, 0, 0, 0.5);
+		}
+		.wrapper {
+			border-right: 1px solid #b9b9b9;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 16px 0px 0px;
+		}
+		.container {
+			border-right: 1px solid #b9b9b9;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 16px;
+		}
+		.frame {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 16px;
+		}
+		.frame-div {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+		.frame-container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 8px;
+		}
+		.e-jejecommsgmailcom {
+			position: relative;
+		}
+		.t-070-4252-5571-parent {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 24px;
+		}
+		.frame-group {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 16px;
+		}
+		.parent1 {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 24px;
+			font-size: 15px;
+			color: #222;
+		}
+		.frame-parent {
+			width: 1240px;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding: 50px 0px;
+			box-sizing: border-box;
+			gap: 21px;
+		}
+		.footer-inner {
+			position: absolute;
+			width: 100%;
+			top: 0px;
+			right: 0%;
+			left: 0%;
+			border-top: 1px solid #dcdcdc;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.footer {
+			position: absolute;
+			bottom: 0px;
+			left: calc(50% - 960px);
+			background-color: #fff;
+			width: 1920px;
+			height: 194px;
+			font-size: 13px;
+			color: rgba(0, 0, 0, 0.85);
+		}
+		.star-dynamic-clay-icon {
+			width: 40px;
+			position: relative;
+			height: 40px;
+			object-fit: cover;
+		}
+		.title-nanumsquare {
+			position: relative;
+			font-weight: 800;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+		.title {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 64px 0px 50px;
+			gap: 20px;
+		}
+		.div10 {
+			width: 1240px;
+			background-color: #f6f6f9;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 50px;
+			box-sizing: border-box;
+		}
+		.qr-parent {
+			align-self: stretch;
+			flex: 1;
+			border-left: 1px solid rgba(0, 0, 0, 0.1);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 50px;
+			font-size: 16px;
+			padding-left: 50px;
+		}
+		.div15 {
+			align-self: stretch;
+			border-top: 1px solid #000;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+		.icon-size {
+			width: 16px;
+			height: 16px;
+		}
+		.div47 {
+			position: relative;
+			line-height: 150%;
+			display: none;
+		}
+		.pagination-atomic {
+			width: 35px;
+			background-color: #fff;
+			border-right: 1px solid rgba(0, 0, 0, 0.15);
+			box-sizing: border-box;
+			height: 35px;
+			display: none;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 8px;
+			font-size: 13.6px;
+			color: #8a949e;
+		}
+		.container1 {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0%;
+			right: 0%;
+			bottom: 0%;
+			left: 0%;
+			opacity: 0.1;
+		}
+		.vector-icon34 {
+			position: absolute;
+			height: 66.88%;
+			width: 40%;
+			top: 16.67%;
+			right: 34.17%;
+			bottom: 16.46%;
+			left: 25.83%;
+			max-width: 100%;
+			overflow: hidden;
+			max-height: 100%;
+			object-fit: contain;
+		}
+		.iconarrow-left {
+			width: 32px;
+			position: relative;
+			height: 32px;
+		}
+		.icon-size1 {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
+		.pagination-atomic1 {
+			width: 35px;
+			background-color: #fff;
+			border-right: 1px solid rgba(0, 0, 0, 0.15);
+			box-sizing: border-box;
+			height: 35px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 8px;
+			font-size: 16px;
+			color: #8a949e;
+		}
+		.number {
+			width: 16px;
+			height: 16px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.pagination-atomic2 {
+			width: 35px;
+			background-color: #efefef;
+			border-right: 1px solid rgba(0, 0, 0, 0.15);
+			box-sizing: border-box;
+			height: 35px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color: #000;
+		}
+		.pagination-atomic3 {
+			width: 35px;
+			background-color: #fff;
+			border-right: 1px solid rgba(0, 0, 0, 0.15);
+			box-sizing: border-box;
+			height: 35px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.vector-icon35 {
+			position: absolute;
+			height: 66.88%;
+			width: 40%;
+			top: 16.67%;
+			right: 25.83%;
+			bottom: 16.46%;
+			left: 34.17%;
+			max-width: 100%;
+			overflow: hidden;
+			max-height: 100%;
+			object-fit: contain;
+		}
+		.pagination-atomic12 {
+			width: 35px;
+			background-color: #fff;
+			height: 35px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 8px;
+			box-sizing: border-box;
+			font-size: 13.6px;
+			color: #464c53;
+		}
+		.pagination-atomic13 {
+			width: 35px;
+			border-radius: 3.2px;
+			background-color: #fff;
+			height: 35px;
+			display: none;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0px 8px;
+			box-sizing: border-box;
+			font-size: 13.6px;
+			color: #464c53;
+		}
+		.page {
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.page-wrapper {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.div46 {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			text-align: center;
+			color: rgba(0, 0, 0, 0.5);
+		}
+		.parent4 {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 32px;
+			font-size: 15px;
+			color: #000;
+			font-family: HanwhaGothic;
+		}
+		.contents {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 16px;
+			font-size: 20px;
+			color: rgba(0, 0, 0, 0.85);
+		}
+		.title-parent {
+			position: absolute;
+			top: 114px;
+			left: 340px;
+			width: 1240px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 0px 0px 64px;
+			box-sizing: border-box;
+			font-size: 30px;
+			color: #000;
+		}
+		.page-container {
+			width: 100%;
+			position: relative;
+			background-color: #fff;
+			height: 1562px;
+			overflow: hidden;
+			text-align: left;
+			font-size: 16px;
+			color: #fff;
+			font-family: NanumSquare;
+		}
+		.je {
+			position: relative;
+			line-height: 150%;
+		}
+        .review-image {
+            width: 100%;
+            display: block;
+			cursor: pointer;
+        }
+
+		/* ================================= */
+		/* === Pop-up (General) Styles === */
+		/* ================================= */
+		#popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .popup-common {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background-color: #fff;
+			border-radius: 8px;
+        }
+		
+		.close-btn-img {
+			position: absolute;
+			top: -20px;
+			right: -20px;
+			width: 20px;
+			height: 20px;
+			background: #808080;border-radius: 50%;
+			border: 0;
+			padding: 0;
+			cursor: pointer;
+			z-index: 1002;
+		}
+
+		.close-btn-img img {
+			width: 80%;
+			height: 80%;
+			display: block;
+		}
+		
+		/* =============================== */
+		/* === Pop-up 2 (Login) Styles ==== */
+		/* =============================== */
+		.login-div { position: relative; line-height: 150%; }
+		.login-wrapper { align-self: stretch; border-bottom: 2px solid #000; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 8px 0px; }
+		.login-div1 { align-self: stretch; position: relative; line-height: 150%; }
+		.input-message-atomic { width: 352px; height: 20px; display: none; }
+		.box { align-self: stretch; border-radius: 6px; background-color: #fff; border: 1px solid #b3b3b3; box-sizing: border-box; height: 56px; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 0px 16px; gap: 8px; color: #b3b3b3; }
+		.text-input { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 5px; }
+		.text-input-parent { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 12px; }
+		.icondownload { width: 24px; position: relative; height: 24px; display: none; }
+		.login-button { align-self: stretch; border-radius: 6px; background-color: #ff6600; height: 64px; display: flex; flex-direction: row; align-items: center; justify-content: center; padding: 0px 24px; box-sizing: border-box; gap: 4px; min-width: 98px; text-align: center; font-size: 17px; color: #fff; }
+		.login-frame-group { width: 410px; display: none; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 32px; }
+		.login-info-image { width: 100%; height: auto; display: block; }
+		.social-login-button { width: 100%; height: auto; cursor: pointer; }
+		.button-parent { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 8px; text-align: center; color: #000; }
+		.login-frame-container { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 32px; }
+		.login-frame-parent { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 16px; text-align: left; font-size: 15px; color: #4d4d4d; }
+		.login { width: 410px; background-color: #fff; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 32px; }
+		.login-parent { position: relative; background-color: #fff; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 32px; box-sizing: border-box; text-align: center; font-size: 26px; color: #000; font-family: HanwhaGothic; }
+
+		/* ================================== */
+		/* === Pop-up 3 (Review) Styles ==== */
+		/* ================================== */
+		.review-div1 { position: relative; line-height: 150%; font-weight: 700; }
+		.review-wrapper { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: center; font-size: 22px; font-weight: 800; font-family: 'HanwhaGothic', sans-serif;}
+		.review-div2 { width: 60px; position: relative; line-height: 150%; display: inline-block; flex-shrink: 0; font-weight: 700; }
+		.review-frame-parent { flex: 1; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 0px; font-size: 13px; color: #808080; }
+    	.review-frame-parent .review-div1 { font-weight: 600; }
+		.review-tr { align-self: stretch; border-bottom: 1px dashed rgba(0, 0, 0, 0.1); display: flex; flex-direction: row; align-items: flex-start; justify-content: flex-start; padding: 16px; gap: 32px; }
+		.review-jejeeeeegmailcom { position: relative; line-height: 140%; }
+		.review-div5 { position: relative; font-size: 13px; line-height: 150%; color: #808080; font-weight: 200;}
+		.review-jejeeeeegmailcom-parent { flex: 1; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 0px; text-align: right; color: rgba(0, 0, 0, 0.7); }
+		.review-tr1 { align-self: stretch; border-bottom: 1px dashed rgba(0, 0, 0, 0.1); display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 16px; gap: 32px; }
+		.review-input { font-family: 'NanumSquare', sans-serif; font-size: 15px; line-height: 150%; border: none; background: transparent; width: 100%; height: 100%; resize: none; outline: none; }
+		.review-container { flex: 1; border: 1px solid rgba(0, 0, 0, 0.1); box-sizing: border-box; height: 39px; overflow: hidden; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 8px 12px; }
+		.review-textarea-bordered { flex: 1; border: 1px solid rgba(0, 0, 0, 0.1); box-sizing: border-box; min-height: 150px; padding: 12px; width: 100%; resize: vertical; font-family: 'NanumSquare', sans-serif;color: rgba(0, 0, 0, 0.7); font-size: 15px; line-height: 1.5; background: transparent; outline: none; }
+		.review-group {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 4px; /* Space between text and icon */
+			position: relative; /* Anchor for the info image */
+		}
+    	.review-group .review-div1 { font-weight: 700; }
+		.review-bitcoin-iconsplus-outline { width: 21.8px; position: relative; max-height: 100%; overflow: hidden; flex-shrink: 0; }
+		.review-box { background-color: #fafafa; display: flex; flex-direction: row; align-items: center; justify-content: center; padding: 29.1px; width: 80px; height: 80px; box-sizing: border-box; cursor: pointer; }
+		.review-box-parent { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; font-size: 13.64px; flex: 1; flex-wrap: wrap;}
+    	.review-image-preview { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; }
+		.review-table { align-self: stretch; border-top: 2px solid #000; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+		.review-table-wrapper { width: 542px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; font-size: 15px; }
+		.review-main-menu-bar-atomic-pc { width: 106px; border-radius: 4px; background-color: #fff; border: 1px solid #ccc; box-sizing: border-box; display: flex; flex-direction: row; align-items: center; justify-content: center; padding: 8px 16px; gap: 8px; cursor: pointer; }
+    	.review-main-menu-bar-atomic-pc .review-div1 { color: #4d4d4d; font-weight: 700; }
+		.review-main-menu-bar-atomic-pc1 { width: 106px; border-radius: 4px; background-color: #000; display: flex; flex-direction: row; align-items: center; justify-content: center; padding: 8px 16px; box-sizing: border-box; gap: 8px; color: #fff; cursor: pointer; }
+    	.review-main-menu-bar-atomic-pc1 .review-div1 { font-weight: 0; }
+		.review-main-menu-bar-atomic-pc-parent { align-self: stretch; display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: 8px; font-size: 14px; }
+		.review-div { background-color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 24px; gap: 22px; }
+		.review-parent { position: relative; width: 100%; display: flex; flex-direction: row; align-items: flex-start; justify-content: flex-start; text-align: left; color: #000; font-family: HanwhaGothic; }
+		.review-vector-parent { cursor: pointer; }
+		.rating-star { width: 34px; height: 33px; }
+
+		/* New styles for help icon feature */
+		.help-icon-class {
+			display: block;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+		}
+		.help-info-class {
+			display: none; /* Hidden by default */
+			position: absolute;
+			right: 100%;
+			top: 50%;
+			transform: translateY(-30%);
+			margin-right: 0px;
+			width: 350px;
+			height: auto;
+			border-radius: 8px;
+			box-shadow: 0 4px 12px rgba(0,0,0,0);
+			z-index: 20;
+		}
+
+		/* ======================================= */
+		/* === Pop-up 4 (Review Complete) Styles === */
+		/* ======================================= */
+		.review-complete-content {
+			position: relative;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding: 24px;
+			box-sizing: border-box;
+			gap: 16px;
+			text-align: left;
+			font-size: 22px;
+			color: #000;
+			font-family: 'HanwhaGothic', sans-serif;
+			width: 520px; 
+		}
+		.rc-div1 {
+			position: relative;
+			line-height: 150%;
+			font-weight: 700;
+		}
+		.rc-wrapper {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			text-align: center;
+			width: 100%;
+		}
+		.rc-p {
+			margin: 0;
+		}
+		.rc-jejeeeeegmailcom-container {
+			position: relative;
+			line-height: 140%;
+		}
+		.rc-jejeeeeegmailcom-wrapper {
+			align-self: stretch;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: left;
+			font-size: 15px;
+			color: rgba(0, 0, 0, 0.7);
+			text-align: left;
+			padding: 10px 0;
+		}
+		.rc-main-menu-bar-atomic-pc {
+			width: 106px;
+			border-radius: 99px;
+			background-color: #fff;
+			color: #000;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 8px 16px;
+			gap: 8px;
+			cursor: pointer;
+			font-size: 14px;
+		}
+		.rc-main-menu-bar-atomic-pc-wrapper {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			padding-top: 10px;padding-left: 360px
+		}
+  	</style>
+  	
+</head>
+<body>
+  	
+  	<div class="page-container">
+    		<div class="header">
+      			<div class="header-inner">
+        				<div class="frame-wrapper">
+          					<div class="parent">
+            						<div class="div1">리뷰</div>
+            						<b class="b">쿠폰 네비게이션</b>
+            						<b class="b">FAQ</b>
+            						<b class="b">문의하기</b>
+            						<b class="b">소식</b>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="header1">
+      			<div class="header-child">
+        				<div class="group">
+          					<div class="text">
+            						<div class="symbol-parent">
+              							<img class="symbol-icon" alt="" src="./Review_Images/symbol.png">
+              							<img class="logo-bold" alt="" src="./Review_Images/qr_alliym_name.png">
+            						</div>
+          					</div>
+          					<div class="headermenu-parent">
+            						<div class="headermenu"><div class="text"><div class="caption1-nanumsquare">QR알리미란?</div></div></div>
+            						<div class="div3">|</div>
+            						<div class="frame-div"><div class="text"><b class="b">QR알리미 사용하기</b></div></div>
+            						<div class="div3">|</div>
+            						<div class="headermenu2"><div class="text"><div class="caption1-nanumsquare">커뮤니티</div></div></div>
+            						<div class="div3">|</div>
+            						<div class="frame-div"><div class="text"><b class="b">B2B</b></div></div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="footer">
+      			<div class="footer-inner">
+        				<div class="frame-parent">
+          					<div class="frame-group">
+            						<div class="frame-container">
+              							<div class="frame-div">
+                								<div class="wrapper"><div class="e-jejecommsgmailcom">(주)제제컴즈</div></div>
+                								<div class="container"><div class="e-jejecommsgmailcom">대표자 : 김준강</div></div>
+                								<div class="frame"><div class="e-jejecommsgmailcom">사업자등록번호 : 641-88-00828</div></div>
+              							</div>
+              							<div class="frame-div"><div class="e-jejecommsgmailcom">통신판매업신고 : 제2021-성남수정-1335호</div></div>
+              							<div class="e-jejecommsgmailcom">13449 경기 성남시 수정구 달래내로 46, 성남글로벌융합센터 A동 405호</div>
+            						</div>
+            						<div class="t-070-4252-5571-parent">
+              							<div class="e-jejecommsgmailcom">T. 070-4252-5571</div>
+              							<div class="e-jejecommsgmailcom">E. jejecomms@gmail.com</div>
+              							<div class="e-jejecommsgmailcom">F. 0508-910-5575</div>
+            						</div>
+          					</div>
+          					<div class="parent1">
+            						<b class="e-jejecommsgmailcom">회사소개</b>
+            						<b class="e-jejecommsgmailcom">이용약관</b>
+            						<b class="e-jejecommsgmailcom">개인정보처리방침</b>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="title-parent">
+      			<div class="title">
+        				<img class="star-dynamic-clay-icon" alt="" src="./Review_Images/star-dynamic-clay.png">
+        				<div class="text"><div class="title-nanumsquare">리뷰</div></div>
+      			</div>
+      			<div class="contents">
+        				<div class="div10">
+							<img src="./Review_Images/Rate.png" alt="Review Score section" style="width: 480px; height: 114px; object-fit: contain;">
+          					<div class="qr-parent">
+								<img src="./Review_Images/R_Info.png" alt="Review promotion text" style="width: 460px; height: 70px; object-fit: contain;">
+								<img id="write-review-btn" src="./Review_Images/R_Button.png" alt="Write a review button" style="width: 120px; height: 40px; object-fit: contain; cursor: pointer;">
+          					</div>
+        				</div>
+        				<div class="parent4">
+          					<div class="div15">
+								<img src="./Review_Images/R1.png" alt="User Review" class="review-image">
+								<img src="./Review_Images/R2.png" alt="User Review" class="review-image">
+								<img src="./Review_Images/R3.png" alt="User Review" class="review-image">
+								<img src="./Review_Images/R4.png" alt="User Review" class="review-image">
+								<img src="./Review_Images/R5.png" alt="User Review" class="review-image">
+								<img src="./Review_Images/R6.png" alt="User Review" class="review-image">
+          					</div>
+          					<div class="div46">
+            						<div class="page-wrapper">
+              							<div class="page">
+                								<div class="pagination-atomic1"><div class="icon-size1"><div class="iconarrow-left"><img class="vector-icon34" alt="" src="./Review_Images/Left.png"></div></div></div>
+                								<div class="pagination-atomic2"><div class="number"><div class="je">1</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">2</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">3</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">4</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">5</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">6</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">7</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">8</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">9</div></div></div>
+                								<div class="pagination-atomic3"><div class="number"><div class="je">10</div></div></div>
+                								<div class="pagination-atomic12"><div class="icon-size1"><div class="iconarrow-left"><img class="vector-icon35" alt="" src="./Review_Images/Right.png"></div></div></div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+  	</div>
+
+	<!-- Popup Overlay -->
+	<div id="popup-overlay"></div>
+
+	<!-- Pop-up 2: Login -->
+	<div id="login-popup" class="popup-common">
+		<button id="close-login-popup-btn" class="close-btn-img">
+			<img src="./Review_Images/Close_round.png" alt="Close Popup">
+		</button>
+		<div class="login-parent">
+			<div class="login">
+					<img src="./Login_Images/Title.png" alt="로그인">
+					<div class="login-frame-parent">
+						<div class="login-frame-container">
+							<img class="login-info-image" src="./Login_Images/Info.png" alt="QR알리미 앱 로그인 안내. 반드시 앱과 동일한 계정으로 연동로그인 해주세요.">
+							<div class="button-parent">
+								<img class="social-login-button" src="./Login_Images/button.png" alt="Google 로그인">
+								<img class="social-login-button" src="./Login_Images/button2.png" alt="Kakao 로그인">
+								<img class="social-login-button" src="./Login_Images/button3.png" alt="Naver 로그인">
+								<img class="social-login-button" src="./Login_Images/button4.png" alt="Apple 로그인">
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Pop-up 3: Write Review -->
+	<div id="review-popup" class="popup-common">
+		<div class="review-parent">
+			<div class="review-div">
+				<div class="review-wrapper">
+					<div class="review-div1">리뷰 작성</div>
+				</div>
+				<div class="review-table-wrapper">
+					<div class="review-table">
+						<div class="review-tr">
+							<div class="review-div2">만족도</div>
+							<div class="review-frame-parent">
+								<div class="review-vector-parent" id="star-rating-container" data-rating="0">
+									<img class="rating-star" alt="star 1">
+									<img class="rating-star" alt="star 2">
+									<img class="rating-star" alt="star 3">
+									<img class="rating-star" alt="star 4">
+									<img class="rating-star" alt="star 5">
+								</div>
+								<div id="star-rating-text" class="review-div1">상품은 만족하셨나요?</div>
+							</div>
+						</div>
+						<div class="review-tr1">
+							<div class="review-div2">작성자</div>
+							<div class="review-jejeeeeegmailcom-parent">
+								<div class="review-jejeeeeegmailcom">jejeeeee@gmail.com</div>
+								<div class="review-div5">2025-03-22</div>
+							</div>
+						</div>
+						<div class="review-tr1">
+							<div class="review-div2">제목</div>
+							<div class="review-container">
+								<input type="text" class="review-input" value="너무 마음에들어요!">
+							</div>
+						</div>
+						<div class="review-tr">
+							<div class="review-div2">내용</div>
+							<textarea class="review-textarea-bordered">디자인도 예쁘고 카드 퀄리티도 최고에요!! 처음 구매하는거라 이것저것 많이 물어봐서 귀찮으셨을텐데 친절하게 상담해주셔서 좋았습니다^^
+요즘 같은 세상에 정말정말 필요한 제품인거 같아서 주변에 추천 많이 해주고 있습니다! </textarea>
+						</div>
+						<div class="review-tr">
+							<div class="review-group">
+								<div class="review-div1">사진 첨부</div>
+								<img id="help-icon" class="help-icon-class" src="./Review_Images/stash_question-light.svg" alt="Help">
+								<img id="help-info-image" class="help-info-class" src="./Review_Images/Info.png" alt="Photo upload info">
+							</div>
+							<div class="review-box-parent" id="review-image-previews">
+								<div class="review-box" id="review-upload-trigger">
+									<img class="review-bitcoin-iconsplus-outline" alt="add photo" src="./Review_Images/Plus.svg">
+								</div>
+                <input type="file" id="review-image-upload" accept="image/*" multiple hidden>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="review-main-menu-bar-atomic-pc-parent">
+					<div id="review-cancel-btn" class="review-main-menu-bar-atomic-pc"><div class="review-div1">취소</div></div>
+					<div id="submit-review-btn" class="review-main-menu-bar-atomic-pc1"><div class="review-div1">등록</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Pop-up 4: Review Complete -->
+	<div id="review-complete-popup" class="popup-common">
+		<div class="review-complete-content">
+			<div class="rc-wrapper">
+				<div class="rc-div1">리뷰 작성 완료</div>
+			</div>
+			<div class="rc-jejeeeeegmailcom-wrapper">
+				<div class="rc-jejeeeeegmailcom-container">
+					<p class="rc-p">리뷰 작성이 완료되었습니다.</p>
+					<p class="rc-p"> </p>
+					<p class="rc-p">리뷰 이벤트로 무료 30일 라이센스가</p>
+					<p class="rc-p">jejeeeee@gmail.com 계정으로 자동충전되었습니다.</p>
+					<p class="rc-p"> </p>
+					<p class="rc-p">쿠폰 네비게이션 행사에 많은 참여 부탁드립니다.</p>
+				</div>
+			</div>
+			<div class="rc-main-menu-bar-atomic-pc-wrapper">
+				<div id="close-complete-popup-btn" class="rc-main-menu-bar-atomic-pc">
+					<div class="rc-div1">확인</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Pop-up 5: Review Image Detail -->
+	<div id="image-detail-popup" class="popup-common">
+		<button id="close-image-popup-btn" class="close-btn-img">
+			<img src="./Review_Images/Close_round.png" alt="Close Image">
+		</button>
+		<img id="popup-detail-image" src="" alt="Review Detail Image" style="display: block; max-width: 90vw; max-height: 90vh;">
+	</div>
+
+
+	<script>
+		// === CONSTANTS ===
+		const STAR_EMPTY_URI = './Review_Images/Empty_star.svg';
+		const STAR_FULL_URI = './Review_Images/Full_star.png';
+		const STAR_HALF_URI = './Review_Images/Half_star.png';
+
+		// === GET ELEMENTS ===
+		const writeReviewBtn = document.getElementById('write-review-btn');
+		const socialLoginButtons = document.querySelectorAll('.social-login-button');
+		const overlay = document.getElementById('popup-overlay');
+		
+		const loginPopup = document.getElementById('login-popup');
+		const closeLoginBtn = document.getElementById('close-login-popup-btn');
+		
+		const reviewPopup = document.getElementById('review-popup');
+		const cancelReviewBtn = document.getElementById('review-cancel-btn');
+		const uploadTrigger = document.getElementById('review-upload-trigger');
+		const fileInput = document.getElementById('review-image-upload');
+		const previewContainer = document.getElementById('review-image-previews');
+		const starContainer = document.getElementById('star-rating-container');
+		const starImages = starContainer.querySelectorAll('.rating-star');
+		const ratingText = document.getElementById('star-rating-text');
+		const submitReviewBtn = document.getElementById('submit-review-btn');
+
+		const reviewCompletePopup = document.getElementById('review-complete-popup');
+		const closeCompleteBtn = document.getElementById('close-complete-popup-btn');
+
+		const imageDetailPopup = document.getElementById('image-detail-popup');
+		const closeImagePopupBtn = document.getElementById('close-image-popup-btn');
+		const popupDetailImage = document.getElementById('popup-detail-image');
+		const reviewImages = document.querySelectorAll('.review-image');
+
+		const helpIcon = document.getElementById('help-icon');
+		const helpInfoImage = document.getElementById('help-info-image');
+
+		// === FUNCTIONS ===
+		function openLoginPopup() {
+			if (overlay) overlay.style.display = 'block';
+			if (loginPopup) loginPopup.style.display = 'block';
+		}
+
+		function openReviewPopup() {
+			if (loginPopup) loginPopup.style.display = 'none'; 
+			if (reviewPopup) reviewPopup.style.display = 'block'; 
+			if (overlay) overlay.style.display = 'block';
+			initStars(); 
+		}
+
+		function openReviewCompletePopup() {
+			if(reviewPopup) reviewPopup.style.display = 'none';
+			if(reviewCompletePopup) reviewCompletePopup.style.display = 'block';
+		}
+  
+		function closeAllPopups() {
+			if (overlay) overlay.style.display = 'none';
+			if (loginPopup) loginPopup.style.display = 'none';
+			if (reviewPopup) reviewPopup.style.display = 'none';
+			if (reviewCompletePopup) reviewCompletePopup.style.display = 'none';
+			if (imageDetailPopup) imageDetailPopup.style.display = 'none';
+		}
+
+		function handleImageUpload(event) {
+			const files = event.target.files;
+			if (!files || !uploadTrigger) return;
+
+			for (const file of files) {
+				if (!file.type.startsWith('image/')) continue;
+
+				const reader = new FileReader();
+				reader.onload = function(e) {
+					const img = document.createElement('img');
+					img.src = e.target.result;
+					img.classList.add('review-image-preview');
+					img.alt = 'preview';
+					previewContainer.insertBefore(img, uploadTrigger);
+				}
+				reader.readAsDataURL(file);
+			}
+		}
+
+		// --- Star Rating Functions ---
+		function initStars() {
+			starContainer.dataset.rating = "0";
+			updateStars(0);
+		}
+
+		function updateStars(rating) {
+			const ratingTexts = {
+				0: "상품은 만족하셨나요?", 0.5: "별로예요", 1: "별로예요", 1.5: "그저 그래요",
+				2: "그저 그래요", 2.5: "괜찮아요", 3: "괜찮아요", 3.5: "좋아요",
+				4: "좋아요", 4.5: "최고예요!", 5: "최고예요!"
+			};
+			
+			starImages.forEach((star, index) => {
+				if (rating >= index + 1) {
+					star.src = STAR_FULL_URI;
+				} else if (rating >= index + 0.5) {
+					star.src = STAR_HALF_URI;
+				} else {
+					star.src = STAR_EMPTY_URI;
+				}
+			});
+
+			if(ratingText) {
+				ratingText.textContent = ratingTexts[rating] || "상품은 만족하셨나요?";
+			}
+		}
+
+		function getRatingFromEvent(event) {
+			const rect = starContainer.getBoundingClientRect();
+			const offsetX = event.clientX - rect.left;
+			const width = rect.width;
+			const rawRating = (offsetX / width) * 5;
+			return Math.max(0.5, Math.ceil(rawRating * 2) / 2);
+		}
+
+		function handleStarHover(event) {
+			const hoverRating = getRatingFromEvent(event);
+			updateStars(hoverRating);
+		}
+
+		function handleStarLeave() {
+			const savedRating = parseFloat(starContainer.dataset.rating) || 0;
+			updateStars(savedRating);
+		}
+
+		function handleStarClick(event) {
+			const clickedRating = getRatingFromEvent(event);
+			starContainer.dataset.rating = clickedRating;
+			updateStars(clickedRating);
+		}
+  
+		// === ADD EVENT LISTENERS ===
+		if (writeReviewBtn) writeReviewBtn.addEventListener('click', openLoginPopup);
+		socialLoginButtons.forEach(button => button.addEventListener('click', openReviewPopup));
+		if (overlay) overlay.addEventListener('click', closeAllPopups);
+		if (closeLoginBtn) closeLoginBtn.addEventListener('click', closeAllPopups);
+		if (cancelReviewBtn) cancelReviewBtn.addEventListener('click', closeAllPopups);
+		if (submitReviewBtn) submitReviewBtn.addEventListener('click', openReviewCompletePopup);
+		if (closeCompleteBtn) closeCompleteBtn.addEventListener('click', closeAllPopups);
+
+		if (uploadTrigger) uploadTrigger.addEventListener('click', () => fileInput.click());
+		if (fileInput) fileInput.addEventListener('change', handleImageUpload);
+		
+		if (starContainer) {
+			starContainer.addEventListener('mousemove', handleStarHover);
+			starContainer.addEventListener('mouseleave', handleStarLeave);
+			starContainer.addEventListener('click', handleStarClick);
+		}
+
+		reviewImages.forEach(image => {
+			image.addEventListener('click', function() {
+				const originalSrc = this.getAttribute('src');
+				if (!originalSrc) return;
+				const fileName = originalSrc.substring(originalSrc.lastIndexOf('/') + 1);
+				const popupFileName = fileName.replace('R', 'Pop');
+				const popupSrc = `./Review_Images/${popupFileName}`;
+				
+				if (popupDetailImage) popupDetailImage.src = popupSrc;
+				if (overlay) overlay.style.display = 'block';
+				if (imageDetailPopup) imageDetailPopup.style.display = 'block';
+			});
+		});
+
+		if (closeImagePopupBtn) closeImagePopupBtn.addEventListener('click', closeAllPopups);
+
+		if (helpIcon) {
+			helpIcon.addEventListener('click', (event) => {
+				event.stopPropagation();
+				const isVisible = helpInfoImage.style.display === 'block';
+				helpInfoImage.style.display = isVisible ? 'none' : 'block';
+			});
+		}
+
+		document.addEventListener('click', (event) => {
+			if (helpInfoImage && helpInfoImage.style.display === 'block') {
+				if (event.target !== helpIcon && !helpInfoImage.contains(event.target)) {
+					helpInfoImage.style.display = 'none';
+				}
+			}
+		});
+
+		// Pagination Logic
+		const pageContainer = document.querySelector('.page');
+		if (pageContainer) {
+			const pageNumbers = pageContainer.querySelectorAll('.pagination-atomic2, .pagination-atomic3');
+			pageNumbers.forEach(page => {
+				page.style.cursor = 'pointer';
+				page.addEventListener('click', function() {
+					const currentActive = pageContainer.querySelector('.pagination-atomic2');
+					if (currentActive) {
+						currentActive.classList.remove('pagination-atomic2');
+						currentActive.classList.add('pagination-atomic3');
+					}
+					this.classList.remove('pagination-atomic3');
+					this.classList.add('pagination-atomic2');
+				});
+			});
+		}
+	</script>
+</body>
+</html>

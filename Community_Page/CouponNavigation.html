@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NanumSquare:wght@300;400;700;800&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum Gothic:wght@400;700;800&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=HanwhaGothic:wght@400&display=swap" />
+
+  	<style>
+/* =============================== */
+/* === Original Page Styles ====== */
+/* =============================== */
+.child {
+  	position: absolute;
+  	top: 268px;
+  	left: 0px;
+  	background-color: #f6f6f9;
+  	width: 1920px;
+  	height: 181px;
+  	display: none;
+}
+.wrapper {
+  	border-right: 1px solid #b9b9b9;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0px 16px 0px 0px;
+}
+.container {
+  	border-right: 1px solid #b9b9b9;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0px 16px;
+}
+.frame {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0px 16px;
+}
+.frame-div {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+}
+.frame-container {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 8px;
+}
+.e-jejecommsgmailcom {
+  	position: relative;
+}
+.t-070-4252-5571-parent {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 24px;
+}
+.frame-group {
+  	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 16px;
+}
+.parent {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 24px;
+  	font-size: 15px;
+  	color: #222;
+}
+.frame-parent {
+  	width: 1240px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 50px 0px;
+  	box-sizing: border-box;
+  	gap: 21px;
+}
+.footer-inner {
+  	position: absolute;
+  	width: 100%;
+  	top: 0px;
+  	right: 0%;
+  	left: 0%;
+  	border-top: 1px solid #dcdcdc;
+  	box-sizing: border-box;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+}
+.footer {
+  	position: absolute;
+  	bottom: 0px;
+  	left: calc(50% - 960px);
+  	background-color: #fff;
+  	width: 1920px;
+  	height: 194px;
+  	font-size: 13px;
+}
+.location-dynamic-clay-icon {
+  	width: 40px;
+  	position: relative;
+  	height: 40px;
+  	object-fit: cover;
+}
+.title-nanumsquare {
+  	position: relative;
+  	font-weight: 800;
+  	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.text {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+}
+.title {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 64px 0px 50px;
+  	gap: 20px;
+}
+.info-banner-image {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.frame-parent1 {
+  	align-self: stretch;
+  	display: grid;
+  	grid-template-columns: repeat(4, 1fr);
+  	gap: 24px 16px;
+  	justify-content: start;
+  	align-content: start;
+}
+.event-card-image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	aspect-ratio: 292 / 451;
+	cursor: pointer;
+}
+
+.group {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 0px 0px 100px;
+  	gap: 64px;
+  	text-align: center;
+  	font-size: 15px;
+  	color: rgba(0, 0, 0, 0.85);
+}
+.title-parent {
+  	position: absolute;
+  	top: 114px;
+  	left: 340px;
+  	width: 1240px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	font-size: 30px;
+  	color: #000;
+}
+.symbol-icon {
+  	width: 26.2px;
+  	position: relative;
+  	height: 26.2px;
+}
+.logo-bold {
+  	width: 65.5px;
+  	position: relative;
+  	height: 22.3px;
+}
+.symbol-parent {
+  	width: 96.8px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 0px;
+}
+.caption1-nanumsquare {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 800;
+}
+.headermenu {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	color: #999;
+}
+.div20 {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 300;
+}
+.headermenu2 {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	color: #000;
+}
+.headermenu-parent {
+  	width: 439px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 0px;
+}
+.parent1 {
+  	width: 1240px;
+  	height: 64px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 0px;
+}
+.header-inner {
+  	width: 1920px;
+  	height: 64px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+}
+.header {
+  	position: absolute;
+  	top: 0px;
+  	left: calc(50% - 960px);
+  	background-color: #fff;
+  	border-bottom: 1px solid #dcdcdc;
+  	box-sizing: border-box;
+  	height: 64px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	color: rgba(0, 0, 0, 0.5);
+}
+.div24 {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 800;
+  	color: #fae100;
+}
+.faq {
+  	position: relative;
+  	line-height: 20px;
+}
+.parent2 {
+  	align-self: stretch;
+  	width: 439px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 0px;
+}
+.frame-wrapper {
+  	width: 1240px;
+  	flex: 1;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-end;
+}
+.header-child {
+  	align-self: stretch;
+  	width: 1920px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+}
+.header1 {
+  	position: absolute;
+  	top: 64px;
+  	left: calc(50% - 960px);
+  	background-color: rgba(0, 0, 0, 0.85);
+  	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  	box-sizing: border-box;
+  	height: 50px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	color: #fff;
+}
+.div {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 1750px;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 16px;
+  	color: rgba(0, 0, 0, 0.85);
+  	font-family: NanumSquare;
+}
+
+/* =============================== */
+/* === Pop-up 1 (Details) Styles  */
+/* =============================== */
+.image-1856-icon {
+  	width: 100%;
+  	position: relative;
+  	max-height: 100%;
+  	object-fit: cover;
+}
+.b {
+  	position: relative;
+  	line-height: 140%;
+}
+.div.popup-status { 
+  	border: 1px solid #ff0000;
+  	display: none;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 6px 8px;
+}
+.div1 {
+  	position: relative;
+  	line-height: 140%;
+  	color: rgba(0, 0, 0, 0.6);
+  	white-space: pre-wrap;
+}
+.b1 {
+  	position: relative;
+  	font-size: 18px;
+  	line-height: 140%;
+  	color: #000;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+.parent.popup-header {
+  	align-self: stretch;
+  	border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 16px 0px;
+  	gap: 8px;
+}
+.p {
+  	margin: 0;
+}
+.qr-app-container {
+  	flex: 1;
+  	position: relative;
+  	line-height: 150%;
+}
+.qr-app-30-wrapper {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 16px 0px;
+  	font-size: 15px;
+  	color: rgba(0, 0, 0, 0.6);
+}
+.text.popup-body {
+  	align-self: stretch;
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+}
+.b2 {
+  	position: relative;
+  	line-height: 140%;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+.participate-button {
+  	align-self: stretch;
+  	background-color: #fff;
+  	border: 1px solid rgba(0, 0, 0, 0.2);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 16px 0px;
+  	font-size: 18px;
+  	color: #000;
+	cursor: pointer;
+}
+.text-parent {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 24px;
+  	gap: 16px;
+}
+.image-1856-parent {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-end;
+  	justify-content: flex-start;
+  	text-align: left;
+  	font-size: 13px;
+  	color: #ff0000;
+  	font-family: 'Nanum Gothic';
+}
+
+
+/* =============================== */
+/* === Pop-up 2 (Login) Styles ==== */
+/* =============================== */
+.login-div {
+  	position: relative;
+  	line-height: 150%;
+}
+.login-wrapper {
+  	align-self: stretch;
+  	border-bottom: 2px solid #000;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 8px 0px;
+}
+.login-div1 {
+  	align-self: stretch;
+  	position: relative;
+  	line-height: 150%;
+}
+.input-message-atomic {
+  	width: 352px;
+  	height: 20px;
+  	display: none;
+}
+.icon-size {
+  	width: 24px;
+  	height: 24px;
+  	display: none;
+}
+.box {
+  	align-self: stretch;
+  	border-radius: 6px;
+  	background-color: #fff;
+  	border: 1px solid #b3b3b3;
+  	box-sizing: border-box;
+  	height: 56px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 0px 16px;
+  	gap: 8px;
+  	color: #b3b3b3;
+}
+.text-input {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 5px;
+}
+.text-input-parent {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 12px;
+}
+.icondownload {
+  	width: 24px;
+  	position: relative;
+  	height: 24px;
+  	display: none;
+}
+.login-button {
+  	align-self: stretch;
+  	border-radius: 6px;
+  	background-color: #ff6600;
+  	height: 64px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0px 24px;
+  	box-sizing: border-box;
+  	gap: 4px;
+  	min-width: 98px;
+  	text-align: center;
+  	font-size: 17px;
+  	color: #fff;
+}
+.login-frame-group {
+  	width: 410px;
+  	display: none;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 32px;
+}
+.qr-app {
+  	margin: 0;
+}
+.qr-app-wrapper { /* This class is now unused but kept to avoid breaking changes */
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0px 8px;
+}
+/* New style for the info image */
+.login-info-image {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.logo-google-icon {
+  	width: 20px;
+  	position: relative;
+  	height: 20px;
+  	object-fit: cover;
+}
+.login-button1 { /* This class is now unused but kept to avoid breaking changes */
+  	align-self: stretch;
+  	border-radius: 6px;
+  	border: 1px solid #808080;
+  	box-sizing: border-box;
+  	height: 64px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0px 16px;
+  	gap: 12px;
+  	min-width: 98px;
+	cursor: pointer;
+}
+/* New style for social login buttons */
+.social-login-button {
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+.logo-naver-icon {
+  	width: 20px;
+  	position: relative;
+  	height: 20px;
+}
+.button-parent {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 8px;
+  	text-align: center;
+  	color: #000;
+}
+.login-frame-container {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 32px;
+}
+.login-frame-parent {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 16px;
+  	text-align: left;
+  	font-size: 15px;
+  	color: #4d4d4d;
+}
+.login {
+  	width: 410px;
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 32px;
+}
+.login-parent {
+  	position: relative;
+  	background-color: #fff;
+  	width: 100%;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 32px;
+  	box-sizing: border-box;
+  	text-align: center;
+  	font-size: 26px;
+  	color: #000;
+  	font-family: HanwhaGothic;
+}
+
+
+/* ================================== */
+/* === Pop-up Functionality Styles === */
+/* ================================== */
+#popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+	display: none; /* Initially hidden */
+	cursor: pointer;
+}
+
+#c1-popup-wrapper {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1001;
+	display: none; /* Initially hidden */
+	max-width: 800px;
+	width: 90%;
+}
+
+#c1-popup {
+	background-color: #fff;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	max-height: 90vh;
+	overflow-y: auto;
+}
+
+#login-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1001;
+	display: none; /* Initially hidden */
+	background-color: #fff;
+	max-width: 480px; /* Adjusted for login form width + padding */
+	width: 90%;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	max-height: 90vh;
+	overflow-y: auto;
+}
+
+		.close-btn-img {
+			position: absolute;
+			top: -20px;
+			right: -20px;
+			width: 20px;
+			height: 20px;
+			background: #808080;border-radius: 50%;
+			border: 0;
+			padding: 0;
+			cursor: pointer;
+			z-index: 1002;
+		}
+
+</style>
+</head>
+<body>
+  	
+  	<div class="div">
+    		<div class="child">
+    		</div>
+    		<div class="footer">
+      			<div class="footer-inner">
+        				<div class="frame-parent">
+          					<div class="frame-group">
+            						<div class="frame-container">
+              							<div class="frame-div">
+                								<div class="wrapper">
+                  									<div class="e-jejecommsgmailcom">(주)제제컴즈</div>
+                								</div>
+                								<div class="container">
+                  									<div class="e-jejecommsgmailcom">대표자 : 김준강</div>
+                								</div>
+                								<div class="frame">
+                  									<div class="e-jejecommsgmailcom">사업자등록번호 : 641-88-00828</div>
+                								</div>
+              							</div>
+              							<div class="frame-div">
+                								<div class="e-jejecommsgmailcom">통신판매업신고 : 제2021-성남수정-1335호</div>
+              							</div>
+              							<div class="e-jejecommsgmailcom">13449 경기 성남시 수정구 달래내로 46, 성남글로벌융합센터 A동 405호</div>
+            						</div>
+            						<div class="t-070-4252-5571-parent">
+              							<div class="e-jejecommsgmailcom">T. 070-4252-5571</div>
+              							<div class="e-jejecommsgmailcom">E. jejecomms@gmail.com</div>
+              							<div class="e-jejecommsgmailcom">F. 0508-910-5575</div>
+            						</div>
+          					</div>
+          					<div class="parent">
+            						<b class="e-jejecommsgmailcom">회사소개</b>
+            						<b class="e-jejecommsgmailcom">이용약관</b>
+            						<b class="e-jejecommsgmailcom">개인정보처리방침</b>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="title-parent">
+      			<div class="title">
+        				<img class="location-dynamic-clay-icon" alt="" src="./Coupon_Images/location-dynamic-clay.png">
+        				
+        				<div class="text">
+          					<div class="title-nanumsquare">쿠폰 네비게이션</div>
+        				</div>
+      			</div>
+      			<div class="group">
+        			<img class="info-banner-image" src="./Coupon_Images/평점.png" alt="쿠폰 네비게이션 정보 배너">
+        				
+        			<div class="frame-parent1">
+          				<img class="event-card-image" id="c1-trigger" alt="리뷰 이벤트 카드" src="./Coupon_Images/C1.png">
+          				<img class="event-card-image" alt="시그니처 라이브러리 오픈 이벤트 카드" src="./Coupon_Images/C2.png">
+          				<img class="event-card-image" alt="LIFE WITH 이벤트 카드" src="./Coupon_Images/C3.png">
+          				<img class="event-card-image" alt="카카오의 약속과 책임 이벤트 카드" src="./Coupon_Images/C4.png">
+          				<img class="event-card-image" alt="카카오의 약속과 책임 이벤트 카드" src="./Coupon_Images/C5.png">
+          				<img class="event-card-image" alt="카카오의 약속과 책임 이벤트 카드" src="./Coupon_Images/C6.png">
+        			</div>
+      			</div>
+    		</div>
+    		<div class="header">
+      			<div class="header-inner">
+        				<div class="parent1">
+          					<div class="text">
+            						<div class="symbol-parent">
+              							<img class="symbol-icon" alt="" src="./Coupon_Images/symbol.png">
+              							<img class="logo-bold" alt="" src="./Coupon_Images/qr_alliym_name.png">
+            						</div>
+          					</div>
+          					<div class="headermenu-parent">
+            						<div class="headermenu">
+              							<div class="text">
+                								<div class="caption1-nanumsquare">QR알리미란?</div>
+              							</div>
+            						</div>
+            						<div class="div20">|</div>
+            						<div class="frame-div">
+              							<div class="text">
+                								<b class="faq">QR알리미 사용하기</b>
+              							</div>
+            						</div>
+            						<div class="div20">|</div>
+            						<div class="headermenu2">
+              							<div class="text">
+                								<div class="caption1-nanumsquare">커뮤니티</div>
+              							</div>
+            						</div>
+            						<div class="div20">|</div>
+            						<div class="frame-div">
+              							<div class="text">
+                								<b class="faq">B2B</b>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="header1">
+      			<div class="header-child">
+        				<div class="frame-wrapper">
+          					<div class="parent2">
+            						<div class="caption1-nanumsquare">리뷰</div>
+            						<div class="div24">쿠폰 네비게이션</div>
+            						<b class="faq">FAQ</b>
+            						<b class="faq">문의하기</b>
+            						<b class="faq">소식</b>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+  	</div>
+
+	<!-- Pop-up 1: Details -->
+	<div id="popup-overlay"></div>
+	<div id="c1-popup-wrapper">
+		<img id="close-popup-btn" class="close-btn-img" src="./Coupon_Images/Close_round.png" alt="Close">
+		<div id="c1-popup">
+			<div class="image-1856-parent">
+				<img class="image-1856-icon" alt="" src="./Coupon_Images/Pop1.png">
+				
+				<div class="text-parent">
+					  <div class="text popup-body">
+							<div class="parent popup-header">
+								  <div class="div popup-status">
+										<b class="b">진행중</b>
+								  </div>
+								  <div class="div1">이벤트 기간  |  2025.07.17 - 2026.12.31</div>
+								  <b class="b1">리뷰 이벤트</b>
+							</div>
+							<div class="qr-app-30-wrapper">
+								  <div class="qr-app-container">
+										<p class="p">운전자분들이 놓치면 안되는 기회 !!</p>
+										<p class="p">2025년 7월 17일부터 "QR알리미" App을 다운로드 받으면, 누구나 30일 무료사용 가능 !!</p>
+										<p class="p">지금 설치하세요. </p>
+										<p class="p"> </p>
+										<p class="p">◦참여조건 : QR알리미 앱을 사용중인 운전자</p>
+								  </div>
+							</div>
+					  </div>
+					  <div class="participate-button" id="participate-btn">
+							<b class="b2">참여하기</b>
+					  </div>
+				</div>
+		  </div>
+		</div>
+	</div>
+
+	<!-- Pop-up 2: Login -->
+	<div id="login-popup">
+		<img id="close-login-popup-btn" class="close-btn-img" src="./Coupon_Images/Close_round.png" alt="Close">
+		<div class="login-parent">
+			<div class="login">
+					<img src="./Login_Images/Title.png" alt="로그인">
+					<div class="login-frame-parent">
+						<div class="login-frame-group">
+							<div class="text-input-parent">
+								<div class="text-input">
+									<div class="login-div1">아이디</div>
+									<div class="input-message-atomic">
+									</div>
+									<div class="box">
+										<div class="qr-app-container">아이디를 입력하세요</div>
+										<div class="icon-size">
+										</div>
+									</div>
+								</div>
+								<div class="text-input">
+									<div class="login-div1">비밀번호</div>
+									<div class="input-message-atomic">
+									</div>
+									<div class="box">
+										<div class="qr-app-container">비밀번호를 입력하세요</div>
+										<div class="icon-size">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="login-button">
+								<div class="icondownload">
+								</div>
+								<div class="qr-app-container">로그인</div>
+								<div class="icondownload">
+								</div>
+							</div>
+						</div>
+						<div class="login-frame-container">
+							<img class="login-info-image" src="./Login_Images/Info.png" alt="QR알리미 앱 로그인 안내. 반드시 앱과 동일한 계정으로 연동로그인 해주세요.">
+							<div class="button-parent">
+								<img class="social-login-button" src="./Login_Images/button.png" alt="Google 로그인">
+								<img class="social-login-button" src="./Login_Images/button2.png" alt="Kakao 로그인">
+								<img class="social-login-button" src="./Login_Images/button3.png" alt="Naver 로그인">
+								<img class="social-login-button" src="./Login_Images/button4.png" alt="Apple 로그인">
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Get elements
+		const c1Trigger = document.getElementById('c1-trigger');
+		const popup = document.getElementById('c1-popup-wrapper');
+		const overlay = document.getElementById('popup-overlay');
+		const closeBtn = document.getElementById('close-popup-btn');
+		
+		const participateBtn = document.getElementById('participate-btn');
+		const loginPopup = document.getElementById('login-popup');
+		const closeLoginBtn = document.getElementById('close-login-popup-btn');
+  
+		// Function to open the first popup
+		function openPopup() {
+		  overlay.style.display = 'block';
+		  popup.style.display = 'block';
+		}
+  
+		// Function to close the first popup
+		function closePopup() {
+		  popup.style.display = 'none';
+		}
+
+		// Function to open the login popup
+		function openLoginPopup() {
+			closePopup(); // Close the first popup
+			loginPopup.style.display = 'block'; // Show the login popup
+			overlay.style.display = 'block'; // Ensure overlay is still visible
+		}
+
+		// Function to close the login popup
+		function closeLoginPopup() {
+			loginPopup.style.display = 'none';
+		}
+
+		// Function to close everything
+		function closeAllPopups() {
+			closePopup();
+			closeLoginPopup();
+			overlay.style.display = 'none';
+		}
+  
+		// Add event listeners
+		if (c1Trigger) {
+			c1Trigger.addEventListener('click', openPopup);
+		}
+		if (overlay) {
+			overlay.addEventListener('click', closeAllPopups);
+		}
+		if (closeBtn) {
+			closeBtn.addEventListener('click', closeAllPopups);
+		}
+		if(participateBtn) {
+			participateBtn.addEventListener('click', openLoginPopup);
+		}
+		if(closeLoginBtn) {
+			closeLoginBtn.addEventListener('click', closeAllPopups);
+		}
+
+	</script>
+</body>
+</html>
