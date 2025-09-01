@@ -273,10 +273,13 @@
         margin: 0 auto;
       }
 
-      .combined-download-image {
+      .desktop-download-img {
           width: 124px;
           height: auto;
           display: block;
+      }
+      .mobile-download-img {
+          display: none;
       }
       
       .symbol-icon {
@@ -392,6 +395,10 @@
         height: auto;
         object-fit: cover;
       }
+      .mobile-image {
+        display: none;
+      }
+      
       .frame-container {
         width: 100%;
         display: flex;
@@ -704,17 +711,76 @@
       }
 
       @media (max-width: 768px) {
-        .headermenu-parent { display: none; }
+        /* --- HEADER MOBILE STYLES --- */
+        .header {
+            height: 56px;
+            box-shadow: none;
+        }
+        .header-inner, .group {
+            height: 56px;
+            padding: 0 16px;
+        }
+        .symbol-icon1 {
+            width: 13.9px;
+            height: 13.9px;
+        }
+        .logo-bold {
+            width: 34.8px;
+            height: 11.8px;
+        }
+        .headermenu-parent {
+            display: flex;
+            gap: 8px; 
+        }
+        .menu-link {
+            padding: 0 4px;
+        }
+        .caption1-nanumsquare1, .div8 {
+            font-size: 10px;
+            line-height: 10.62px;
+        }
+        .div8 {
+            font-weight: 300;
+        }
+        .header.scrolled .caption1-nanumsquare1,
+        .header.scrolled .div8 {
+            color: black !important;
+        }
+
+        /* --- FRAME PARENT & DOWNLOAD SECTION MOBILE STYLES (UPDATED) --- */
+        .frame-parent {
+            border-radius: 30px 30px 0 0;
+            margin-top: -60px;
+        }
         .download-qr-googleplay-parent {
-          flex-direction: column;
+            flex-direction: row;
+            padding: 16px;
+            gap: 8px;
+        }
+        .download-qr-googleplay-parent a {
+            display: flex;
+            align-items: center;
+        }
+        .download-qr-googleplay-parent a:first-child {
+            flex: 0 0 110.6px;
+        }
+        .download-qr-googleplay-parent a:not(:first-child) {
+            flex: 1;
+            min-width: 0;
+        }
+        .desktop-download-img {
+            display: none;
+        }
+        .mobile-download-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
         }
         .logo-parent {
-          position: relative;
-          top: auto;
-          left: auto;
-          right: auto;
-          margin-top: 20px !important;
+          display: none;
         }
+        
         .video-play-btn {
           width: 60px;
           height: 60px;
@@ -731,32 +797,105 @@
         .volume-container {
           display: none;
         }
-        /* Footer Responsive Styles */
-        .company-info-row {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
+        
+        /* --- SNS Section Mobile Styles --- */
+        .title-parent {
+            padding: 60px 20px 40px;
+            gap: 30px;
         }
-        .company-info-row > div {
-            padding: 0;
-            border-right: none;
+        .title-nanumsquare {
+            font-size: 24px;
         }
-        .contact-info {
-            flex-direction: column;
+        .icon-computer {
+            width: 32px;
+            height: 32px;
+        }
+        .frame-wrapper {
+            padding: 40px 16px; 
+        }
+        .sns-blog-parent {
+            gap: 16px;
+            justify-content: center; 
+        }
+        .sns-icon {
+            width: 46px; 
+            height: 46px;
+        }
+        
+        /* --- MOBILE VIDEO PLAYER SIZE (NEW) --- */
+        .video, .video1 {
+          width: 230px;
+          height: 130px;
+          aspect-ratio: auto;
+        }
+
+        .desktop-image {
+          display: none;
+        }
+        .mobile-image {
+          display: block;
+        }
+
+        /* --- FOOTER RESPONSIVE STYLES --- */
+        .site-footer {
+            padding: 24px 16px;
+            font-size: 12px;
+            text-align: center;
+        }
+        .footer-content-wrapper {
+            align-items: center; 
+            gap: 24px;
+        }
+        .footer-left {
+            order: 2; 
+            align-items: center;
             gap: 8px;
-            align-items: flex-start;
         }
         .footer-right-links {
-             flex-direction: column;
-             gap: 12px;
-             align-items: flex-start;
+            order: 1; 
+            flex-direction: row; 
+            gap: 16px;
+            font-size: 13px;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .company-info-row {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4px 0;
+        }
+        .company-info-row > div {
+            padding: 0 8px; 
+            border-right: 1px solid #b9b9b9; 
+        }
+        .company-info-row > div:last-child {
+            border-right: none; 
+        }
+        .address {
+            margin-top: 4px;
+        }
+        .contact-info {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 12px;
         }
       }
     </style>
 </head>
 <body>
     <div class="qr-page-container">
-        <div class="header">
+        <header class="header">
             <div class="header-inner">
                 <div class="group">
                     <div class="text1">
@@ -782,7 +921,7 @@
                             </div>
                         </a>
                         <div class="div8">|</div>
-                        <a href="./Community_Page/index.html" class="menu-link">
+                        <a href="./Community_Page/index2.html" class="menu-link">
                             <div class="frame-parent3">
                                 <div class="text1">
                                     <b class="caption1-nanumsquare1">커뮤니티</b>
@@ -800,7 +939,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
         <div class="hero-section">
             <img class="image-1852-icon" alt="Background image of a road" src="./Home_Images/Hero_1.png">
@@ -819,16 +958,19 @@
             </div>
         </div>
 
-        <div class="frame-parent">
+        <main class="frame-parent">
             <div class="download-qr-googleplay-parent">
                 <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer">
-                    <img class="combined-download-image" src="./Home_Images/appstore_QR.png" alt="Download on Google Play">
+                    <img class="desktop-download-img" src="./Home_Images/google_QR.png" alt="Download on Google Play">
+                    <img class="mobile-download-img" src="./Home_Images/mobile_google.png" alt="Download on Google Play">
                 </a>
                 <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                    <img class="combined-download-image" src="./Home_Images/google_QR.png" alt="Download on the App Store">
+                    <img class="desktop-download-img" src="./Home_Images/appstore_QR.png" alt="Download on the App Store">
+                    <img class="mobile-download-img" src="./Home_Images/mobile_appStore.png" alt="Download on the App Store">
                 </a>
                 <a href="introduction.pdf" download="QR_Allimi_Introduction.pdf">
-                     <img class="combined-download-image" src="./Home_Images/QR_introduction.png" alt="Download Introduction PDF">
+                     <img class="desktop-download-img" src="./Home_Images/QR_introduction.png" alt="Download Introduction PDF">
+                     <img class="mobile-download-img" src="./Home_Images/mobile_introduce.png" alt="Download Introduction PDF">
                 </a>
                 <div class="logo-parent">
                     <div class="logo">
@@ -839,14 +981,14 @@
                 </div>
             </div>
 
-            <div class="image-1850-parent">
+            <section class="image-1850-parent">
                 <img class="image-1850-icon" alt="Decorative background" src="./Home_Images/background_image.png">
                 <div class="video">
                     <div class="video-player-container" id="videoContainer1">
                         <div class="video-overlay">
                             <img src="./Home_Images/Video.svg" alt="Play" class="video-play-btn" id="playVideo1">
                         </div>
-                        <video id="videoPlayer1">
+                        <video id="videoPlayer1" preload="metadata">
                             <source src="./Home_Video/news_video1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -878,11 +1020,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <img class="image-1853-icon" alt="Decorative transition image" src="./Home_Images/section3.png">
+            <img class="image-1853-icon desktop-image" alt="Decorative transition image" src="./Home_Images/section3.png">
+            <img class="image-1853-icon mobile-image" alt="Decorative transition image for mobile" src="./Home_Images/section4.png">
             
-            <div class="frame-container">
+            <section class="frame-container">
                 <div class="title-parent">
                     <div class="title">
                         <img class="icon-computer" alt="SNS icon" src="./Home_Images/icon_computer.png">
@@ -895,7 +1038,7 @@
                             <div class="video-overlay">
                                 <img src="./Home_Images/Video.svg" alt="Play" class="video-play-btn" id="playVideo2">
                             </div>
-                            <video id="videoPlayer2">
+                            <video id="videoPlayer2" preload="metadata">
                                 <source src="./Home_Video/news_video2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -948,8 +1091,8 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <footer class="site-footer">
             <div class="site-footer-inner">
@@ -998,7 +1141,8 @@
         logo: './Home_Images/qr_alliym_name.png'
       };
       
-      window.addEventListener('scroll', function () {
+      // Function to handle header changes, now works for all screen sizes
+      function handleHeaderScroll() {
         const isScrolled = window.scrollY > 10;
         
         if (isScrolled) { 
@@ -1010,7 +1154,14 @@
           symbolIcon.src = topImages.symbol;
           logoImage.src = topImages.logo;
         }
-      });
+      }
+
+      // Initial check on page load
+      handleHeaderScroll();
+
+      // Add event listeners
+      window.addEventListener('scroll', handleHeaderScroll);
+      window.addEventListener('resize', handleHeaderScroll);
       
       // Carousel functionality
       const heroImages = [
@@ -1084,10 +1235,12 @@
       startSlider();
       
       // Enhanced Video Player Functionality
-      function setupVideoPlayer(containerId, playerId, playBtnId) {
+      function setupVideoPlayer(containerId) {
         const container = document.getElementById(containerId);
-        const player = document.getElementById(playerId);
-        const playBtn = document.getElementById(playBtnId);
+        if (!container) return;
+
+        const player = container.querySelector('video');
+        const playBtn = container.querySelector('.video-play-btn');
         const playPauseBtn = container.querySelector('.play-pause-btn');
         const progressBar = container.querySelector('.progress-bar');
         const timeDisplay = container.querySelector('.time-display');
@@ -1098,17 +1251,21 @@
         
         // Format time as MM:SS
         function formatTime(seconds) {
-          const mins = Math.floor(seconds / 60);
-          const secs = Math.floor(seconds % 60);
-          return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            if (isNaN(seconds)) return "00:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
         
+        function updateTimeDisplay() {
+            timeDisplay.textContent = `${formatTime(player.currentTime)} / ${formatTime(player.duration)}`;
+        }
+
         // Update progress bar
         function updateProgress() {
           const percent = (player.currentTime / player.duration) * 100;
           progressBar.style.width = `${percent}%`;
-          
-          timeDisplay.textContent = `${formatTime(player.currentTime)} / ${formatTime(player.duration)}`;
+          updateTimeDisplay();
         }
         
         // Set video progress
@@ -1124,14 +1281,23 @@
         function togglePlay() {
           if (player.paused) {
             player.play();
-            container.classList.add('playing');
-            playPauseBtn.querySelector('#playIcon').style.display = 'none';
-            playPauseBtn.querySelector('#pauseIcon').style.display = '';
           } else {
             player.pause();
-            playPauseBtn.querySelector('#playIcon').style.display = '';
-            playPauseBtn.querySelector('#pauseIcon').style.display = 'none';
           }
+        }
+
+        function updatePlayButton() {
+            const playIcon = playPauseBtn.querySelector('#playIcon');
+            const pauseIcon = playPauseBtn.querySelector('#pauseIcon');
+            if (player.paused) {
+                container.classList.remove('playing');
+                playIcon.style.display = '';
+                pauseIcon.style.display = 'none';
+            } else {
+                container.classList.add('playing');
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = '';
+            }
         }
         
         // Update volume
@@ -1157,14 +1323,14 @@
         }
         
         // Event listeners
-        player.addEventListener('click', togglePlay);
         playBtn.addEventListener('click', togglePlay);
         playPauseBtn.addEventListener('click', togglePlay);
+        player.addEventListener('play', updatePlayButton);
+        player.addEventListener('pause', updatePlayButton);
         player.addEventListener('timeupdate', updateProgress);
-        player.addEventListener('ended', () => {
-          playPauseBtn.querySelector('#playIcon').style.display = '';
-          playPauseBtn.querySelector('#pauseIcon').style.display = 'none';
-        });
+        player.addEventListener('loadedmetadata', updateTimeDisplay);
+        player.addEventListener('ended', updatePlayButton);
+
         progressContainer.addEventListener('click', setProgress);
         volumeSlider.addEventListener('input', setVolume);
         volumeBtn.addEventListener('click', toggleMute);
@@ -1172,11 +1338,12 @@
         
         // Initialize player
         player.volume = 1;
+        updatePlayButton();
       }
       
       // Set up both video players
-      setupVideoPlayer('videoContainer1', 'videoPlayer1', 'playVideo1');
-      setupVideoPlayer('videoContainer2', 'videoPlayer2', 'playVideo2');
+      setupVideoPlayer('videoContainer1');
+      setupVideoPlayer('videoContainer2');
     </script>
 </body>
 </html>
