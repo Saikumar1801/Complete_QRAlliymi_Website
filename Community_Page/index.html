@@ -280,7 +280,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center; /* Center pagination */
             justify-content: flex-start;
             padding: 0px 0px 100px;
             gap: 64px;
@@ -307,8 +307,9 @@
             object-fit: cover;
             object-position: center;
             border: 1px solid rgba(0, 0, 0, 0.1);
-            aspect-ratio: 292 / 451;
+            aspect-ratio: 2 / 3;
             cursor: pointer;
+            box-sizing: border-box;
         }
 
         /* Pop-up 1 (Details) Styles for Coupon Section */
@@ -596,19 +597,19 @@
         
         /* 
         ==========================================================================
-         START: PAGINATION STYLES (Added for FAQ)
+         START: PAGINATION STYLES (SHARED)
         ==========================================================================
         */
-        #faq-section .icon-size {
+        #faq-section .icon-size, #coupon-section .icon-size {
             width: 16px;
             height: 16px;
         }
-        #faq-section .div {
+        #faq-section .div, #coupon-section .div {
             position: relative;
             line-height: 150%;
             display: none;
         }
-        #faq-section .pagination-atomic {
+        #faq-section .pagination-atomic, #coupon-section .pagination-atomic {
             width: 35px;
             background-color: #fff;
             border-right: 1px solid rgba(0, 0, 0, 0.15);
@@ -622,7 +623,7 @@
             font-size: 13.6px;
             color: #8a949e;
         }
-        #faq-section .container {
+        #faq-section .container, #coupon-section .container {
             position: absolute;
             height: 100%;
             width: 100%;
@@ -632,7 +633,7 @@
             left: 0%;
             opacity: 0.1;
         }
-        #faq-section .vector-icon {
+        #faq-section .vector-icon, #coupon-section .vector-icon {
             position: absolute;
             height: 66.88%;
             width: 40%;
@@ -645,18 +646,18 @@
             max-height: 100%;
             object-fit: contain;
         }
-        #faq-section .iconarrow-left {
+        #faq-section .iconarrow-left, #coupon-section .iconarrow-left {
             width: 36px;
             position: relative;
             height: 36px;
         }
-        #faq-section .icon-size1 {
+        #faq-section .icon-size1, #coupon-section .icon-size1 {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
         }
-        #faq-section .pagination-atomic1 {
+        #faq-section .pagination-atomic1, #coupon-section .pagination-atomic1 {
             width: 35px;
             background-color: #fff;
             border-right: 1px solid rgba(0, 0, 0, 0.15);
@@ -672,14 +673,14 @@
             cursor: pointer;
             transition: background-color 0.2s ease-in-out;
         }
-        #faq-section .pagination-atomic1:hover {
+        #faq-section .pagination-atomic1:hover, #coupon-section .pagination-atomic1:hover {
              background-color: #f0f0f0;
         }
-        #faq-section .div2 {
+        #faq-section .div2, #coupon-section .div2 {
             position: relative;
             line-height: 150%;
         }
-        #faq-section .number {
+        #faq-section .number, #coupon-section .number {
             width: 16px;
             height: 16px;
             display: flex;
@@ -687,7 +688,7 @@
             align-items: center;
             justify-content: center;
         }
-        #faq-section .pagination-atomic2 {
+        #faq-section .pagination-atomic2, #coupon-section .pagination-atomic2 {
             width: 35px;
             background-color: #efefef;
             border-right: 1px solid rgba(0, 0, 0, 0.15);
@@ -699,7 +700,7 @@
             justify-content: center;
             color: #000;
         }
-        #faq-section .pagination-atomic3 {
+        #faq-section .pagination-atomic3, #coupon-section .pagination-atomic3 {
             width: 35px;
             background-color: #fff;
             border-right: 1px solid rgba(0, 0, 0, 0.15);
@@ -711,14 +712,14 @@
             justify-content: center;
         }
         /* Style for number buttons */
-        #faq-section .pagination-number-btn {
+        #faq-section .pagination-number-btn, #coupon-section .pagination-number-btn {
             cursor: pointer;
             transition: background-color 0.2s ease-in-out;
         }
-        #faq-section .pagination-number-btn:not(.pagination-atomic2):hover {
+        #faq-section .pagination-number-btn:not(.pagination-atomic2):hover, #coupon-section .pagination-number-btn:not(.pagination-atomic2):hover {
             background-color: #f0f0f0; /* Light grey hover for inactive buttons */
         }
-        #faq-section .vector-icon1 {
+        #faq-section .vector-icon1, #coupon-section .vector-icon1 {
             position: absolute;
             height: 66.88%;
             width: 40%;
@@ -731,7 +732,7 @@
             max-height: 100%;
             object-fit: contain;
         }
-        #faq-section .pagination-atomic12 {
+        #faq-section .pagination-atomic12, #coupon-section .pagination-atomic12 {
             width: 35px;
             background-color: #fff;
             height: 35px;
@@ -746,10 +747,10 @@
             cursor: pointer;
             transition: background-color 0.2s ease-in-out;
         }
-        #faq-section .pagination-atomic12:hover {
+        #faq-section .pagination-atomic12:hover, #coupon-section .pagination-atomic12:hover {
             background-color: #f0f0f0;
         }
-        #faq-section .pagination-atomic13 {
+        #faq-section .pagination-atomic13, #coupon-section .pagination-atomic13 {
             width: 35px;
             border-radius: 3.2px;
             background-color: #fff;
@@ -763,15 +764,14 @@
             font-size: 13.6px;
             color: #464c53;
         }
-        #faq-section .page {
+        #faq-section .page, #coupon-section .page {
             border: 1px solid rgba(0, 0, 0, 0.15);
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
         }
-        #faq-section .page-parent {
-            /* width: 100%; */ /* This can cause layout issues in a flex container */
+        #faq-section .page-parent, #coupon-section .page-parent {
             position: relative;
             display: flex;
             flex-direction: column;
@@ -1049,9 +1049,453 @@
             opacity: 0.7;
         }
 
+        /* HIDE NEW MOBILE ELEMENTS ON DESKTOP */
+        .new-mobile-header-container, .new-mobile-footer {
+            display: none;
+        }
+
+        /* 
+        ==========================================================================
+         START: MOBILE & RESPONSIVE STYLES
+        ==========================================================================
+        */
+        @media (max-width: 992px) {
+            /* Hide Desktop Header & Footer */
+            .main-header, .site-footer {
+                display: none;
+            }
+            /* Show New Mobile Header & Footer */
+            .new-mobile-header-container, .new-mobile-footer {
+                display: flex;
+            }
+
+            /* --- START: NEW MOBILE HEADER & SUBHEADER STYLES (FROM USER) --- */
+            .new-mobile-header-container {
+                position: sticky;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                flex-direction: column;
+            }
+
+            /* Main Header */
+            .new-mobile-header {
+                width: 100%;
+                background-color: #fff;
+                border-bottom: 0.5px solid #dcdcdc;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center; /* Center the inner container */
+                text-align: left;
+                font-size: 10px;
+                color: rgba(0, 0, 0, 0.5);
+                font-family: 'NanumSquare', sans-serif;
+            }
+            .new-mobile-header-inner {
+                width: 360px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 16px;
+                box-sizing: border-box;
+            }
+            .new-mobile-header .header-content {
+                align-self: stretch;
+                height: 12px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .new-mobile-header .logo-wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            .new-mobile-header .symbol-parent {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 2.7px;
+            }
+            .new-mobile-header .symbol-icon {
+                width: 13.9px;
+                position: relative;
+                height: 13.9px;
+            }
+            .new-mobile-header .logo-bold {
+                width: 34.8px;
+                position: relative;
+                height: 11.8px;
+            }
+            .new-mobile-header .headermenu-parent {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+            }
+            .new-mobile-header .headermenu {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                cursor: pointer;
+            }
+            .new-mobile-header .caption1-nanumsquare {
+                position: relative;
+                line-height: 10.62px;
+            }
+            .new-mobile-header .header-div {
+                position: relative;
+                font-size: 8.5px;
+                line-height: 10.62px;
+                font-weight: 300;
+            }
+            .new-mobile-header .headermenu.active {
+                color: #000;
+            }
+            .new-mobile-header .caption1-nanumsquare-active {
+                position: relative;
+                line-height: 10.62px;
+                font-weight: 800;
+            }
+            .new-mobile-header .icon, .new-mobile-header .login-icon { display: none; }
+
+            /* Sub Header */
+            .new-mobile-subheader {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.85);
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 8px 16px;
+                box-sizing: border-box;
+                text-align: left;
+                font-size: 10px;
+                color: #fff;
+                font-family: 'NanumSquare', sans-serif;
+            }
+            .new-mobile-subheader-inner {
+                width: 360px; 
+                max-width: 100%; 
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+            }
+            .new-mobile-subheader .nav-button {
+                font-size: 10px;
+                font-family: 'NanumSquare', sans-serif;
+                position: relative;
+            }
+            .new-mobile-subheader .nav-button.active-yellow {
+                font-weight: 800;
+                color: #fae100;
+            }
+            /* --- END: NEW MOBILE HEADER & SUBHEADER STYLES --- */
+
+            /* --- START: NEW MOBILE FOOTER STYLES (FROM USER) --- */
+            .new-mobile-footer {
+                width: 100%;
+                background-color: #fff;
+                border-top: 0.8px solid #dcdcdc;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 24px 16px;
+                text-align: left;
+                font-size: 12px;
+                color: #222;
+                font-family: 'NanumSquare', sans-serif;
+            }
+            .new-mobile-footer .footer-frame-parent {
+                width: 360px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 16px;
+            }
+            .new-mobile-footer .footer-links {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 16px;
+            }
+            .new-mobile-footer .b {
+                position: relative;
+            }
+            .new-mobile-footer .footer-info-group {
+                align-self: stretch;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 4.1px;
+                font-size: 10.17px;
+                color: rgba(0, 0, 0, 0.85);
+            }
+            .new-mobile-footer .footer-info-row {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-wrap: wrap; /* Allow wrapping on very small screens */
+                justify-content: center;
+            }
+            .new-mobile-footer .info-item-wrapper {
+                border-right: 0.8px solid #b9b9b9;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 0px 12.5px 0px 0px;
+            }
+            .new-mobile-footer .info-item-container {
+                border-right: 0.8px solid #b9b9b9;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 0px 12.5px;
+            }
+            .new-mobile-footer .info-item-frame {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 0px 0px 0px 12.5px;
+            }
+            .new-mobile-footer .contact-info-parent {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 18.8px;
+                flex-wrap: wrap; /* Allow wrapping */
+                justify-content: center;
+            }
+             /* --- END: NEW MOBILE FOOTER STYLES --- */
+
+
+            /* Unified width constraint for ALL sections on mobile */
+            #review-section .title-parent,
+            #coupon-section .title-parent,
+            #contact-us-section .title-parent,
+            #news-section .title-parent,
+            #faq-section .title-parent {
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            
+            #coupon-section .event-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            /* Coupon Section Mobile Tweaks */
+            #coupon-section .title {
+                padding: 40px 0 30px;
+                gap: 12px;
+            }
+            #coupon-section .title-nanumsquare {
+                font-size: 22px;
+            }
+            #coupon-section .location-dynamic-clay-icon {
+                width: 30px;
+                height: 30px;
+            }
+            #coupon-section .content-group {
+                width: 100%; 
+                padding-bottom: 60px;
+                gap: 24px;
+            }
+            
+            #contact-us-section .qa-mockup-parent {
+                height: auto;
+            }
+            #contact-us-section .qa-mockup {
+                display: none; /* Hide complex mockup on mobile */
+            }
+            #contact-us-section .frame-parent1 {
+                position: static;
+                width: 100%;
+                border-radius: 15px;
+            }
+            #contact-us-section .parent1 {
+                padding: 24px;
+            }
+            #contact-us-section .group-div,
+            #contact-us-section .frame-parent2 {
+                width: 100%;
+                position: static;
+            }
+             #contact-us-section .parent2 {
+                display: none; /* Hide labels, use placeholders */
+            }
+            #news-section .group {
+                width: 100%;
+            }
+            #news-section .icon-left, #news-section .icon-right {
+                display: none; /* Simpler interaction on mobile, can rely on touch scroll */
+            }
+            #news-section .cards-container-inner {
+                overflow-x: auto;
+                padding-bottom: 20px;
+                 -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            #news-section .cards-container-inner::-webkit-scrollbar { display: none; }
+
+            /* --- START: MOBILE POPUP SIZE ADJUSTMENTS --- */
+            #coupon-detail-popup {
+                max-width: 340px; 
+                width: 90%;
+            }
+            #coupon-detail-popup .text-parent {
+                padding: 16px; 
+                gap: 12px;
+            }
+            #coupon-detail-popup .popup-header {
+                padding: 12px 0px;
+                gap: 6px;
+            }
+            #coupon-detail-popup .b1 {
+                font-size: 16px;
+            }
+            #coupon-detail-popup .qr-app-30-wrapper {
+                padding: 12px 0;
+            }
+            #coupon-detail-popup .qr-app-container {
+                font-size: 14px;
+            }
+            #coupon-detail-popup .participate-button {
+                padding: 12px 0;
+                font-size: 16px;
+            }
+            
+            #coupon-login-popup, #login-popup {
+                max-width: 340px; 
+                width: 90%;
+            }
+            #coupon-login-popup .login-parent, #login-popup .login-parent {
+                padding: 24px;
+                justify-content: center;
+            }
+            #coupon-login-popup .login, #login-popup .login {
+                width: 100%;
+                gap: 24px;
+            }
+            /* --- END: MOBILE POPUP SIZE ADJUSTMENTS --- */
+
+            /* --- START: MOBILE PAGINATION SIZE ADJUSTMENTS --- */
+            #review-section .page,
+            #coupon-section .page,
+            #faq-section .page {
+                justify-content: center;
+            }
+
+            #review-section .pagination-atomic1,
+            #review-section .pagination-atomic2,
+            #review-section .pagination-atomic3,
+            #review-section .pagination-atomic12,
+            #coupon-section .pagination-atomic1, 
+            #coupon-section .pagination-atomic2, 
+            #coupon-section .pagination-atomic3, 
+            #coupon-section .pagination-atomic12,
+            #faq-section .pagination-atomic1, 
+            #faq-section .pagination-atomic2, 
+            #faq-section .pagination-atomic3, 
+            #faq-section .pagination-atomic12 {
+                width: 28px;
+                height: 28px;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+
+            #review-section .number,
+            #coupon-section .number,
+            #faq-section .number {
+                font-size: 13px;
+            }
+
+            #review-section .pagination-atomic1 .iconarrow-left,
+            #review-section .pagination-atomic12 .iconarrow-left,
+            #coupon-section .pagination-atomic1 .iconarrow-left,
+            #coupon-section .pagination-atomic12 .iconarrow-left,
+            #faq-section .pagination-atomic1 .iconarrow-left,
+            #faq-section .pagination-atomic12 .iconarrow-left {
+                width: 24px;
+                height: 24px;
+            }
+            
+            #review-section .je {
+                font-size: 13px;
+            }
+            /* --- END: MOBILE PAGINATION SIZE ADJUSTMENTS --- */
+        }
+
     </style>
 </head>
 <body>
+    <!-- NEW MOBILE HEADER & SUBHEADER START -->
+    <div class="new-mobile-header-container">
+        <div class="new-mobile-header">
+            <div class="new-mobile-header-inner">
+                <div class="header-content">
+                    <div class="logo-wrapper">
+                        <div class="symbol-parent">
+                            <img class="symbol-icon" alt="" src="./News_Images/symbol.png">
+                            <img class="logo-bold" alt="" src="./News_Images/qr_alliym_name.png">
+                        </div>
+                    </div>
+                    <div class="headermenu-parent">
+                        <div class="headermenu mobile-main-nav-item" data-link="../index.html">
+                           <b class="caption1-nanumsquare">QR알리미란?</b>
+                        </div>
+                        <div class="header-div">|</div>
+                        <div class="headermenu mobile-main-nav-item" data-link="../QRUserGuide/index.html">
+                           <b class="caption1-nanumsquare">QR알리미 사용하기</b>
+                        </div>
+                        <div class="header-div">|</div>
+                        <div class="headermenu active mobile-main-nav-item" data-link="../Community_Page/index2.html">
+                           <div class="caption1-nanumsquare-active">커뮤니티</div>
+                        </div>
+                        <div class="header-div">|</div>
+                        <div class="headermenu mobile-main-nav-item" data-link="../B2B_Page/index.html">
+                           <b class="caption1-nanumsquare">B2B</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="new-mobile-subheader">
+            <div class="new-mobile-subheader-inner">
+                <button class="nav-button" data-target="review-section"><b>리뷰</b></button>
+                <button class="nav-button" data-target="coupon-section"><b>쿠폰 네비게이션</b></button>
+                <button class="nav-button" data-target="faq-section"><b>FAQ</b></button>
+                <button class="nav-button" data-target="contact-us-section"><b>문의하기</b></button>
+                <button class="nav-button" data-target="news-section"><b>소식</b></button>
+            </div>
+        </nav>
+    </div>
+    <!-- NEW MOBILE HEADER & SUBHEADER END -->
 
     <header class="main-header">
         <div class="header-top">
@@ -1062,36 +1506,36 @@
                         <img class="logo-bold" alt="Logo" src="./News_Images/qr_alliym_name.png">
                     </div>
                 </div>
-<nav class="header-nav-main">
-    <button class="nav-button" data-link="../index.html">
-        <span class="nav-link">QR알리미란?</span>
-    </button>
-    <div class="nav-divider">|</div>
+                <nav class="header-nav-main">
+                    <button class="nav-button" data-link="../index.html">
+                        <span class="nav-link">QR알리미란?</span>
+                    </button>
+                    <div class="nav-divider">|</div>
 
-    <button class="nav-button" data-link="../QRUserGuide/index.html">
-        <span class="nav-link">QR알리미 사용하기</span>
-    </button>
-    <div class="nav-divider">|</div>
+                    <button class="nav-button" data-link="../QRUserGuide/index.html">
+                        <span class="nav-link">QR알리미 사용하기</span>
+                    </button>
+                    <div class="nav-divider">|</div>
 
-    <button class="nav-button" data-link="../Community_Page/index.html">
-        <span class="nav-link active">커뮤니티</span>
-    </button>
-    <div class="nav-divider">|</div>
+                    <button class="nav-button" data-link="../Community_Page/index2.html">
+                        <span class="nav-link active">커뮤니티</span>
+                    </button>
+                    <div class="nav-divider">|</div>
 
-    <button class="nav-button" data-link="../B2B_Page/index.html">
-        <span class="nav-link">B2B</span>
-    </button>
-</nav>
+                    <button class="nav-button" data-link="../B2B_Page/index.html">
+                        <span class="nav-link">B2B</span>
+                    </button>
+                </nav>
             </div>
         </div>
         <div class="header-bottom">
             <div class="header-bottom-inner">
                 <nav class="header-nav-sub">
-                    <button class="nav-button active-yellow" data-target="review-section"><b class="faq">리뷰</b></button>
-                    <button class="nav-button" data-target="coupon-section"><b class="faq">쿠폰 네비게이션</b></button>
-                    <button class="nav-button" data-target="faq-section"><b class="faq">FAQ</b></button>
-                    <button class="nav-button" data-target="contact-us-section"><b class="faq">문의하기</b></button>
-                    <button class="nav-button" data-target="news-section"><b class="faq">소식</b></button>
+                    <button class="nav-button" data-target="review-section"><b>리뷰</b></button>
+                    <button class="nav-button" data-target="coupon-section"><b>쿠폰 네비게이션</b></button>
+                    <button class="nav-button" data-target="faq-section"><b>FAQ</b></button>
+                    <button class="nav-button" data-target="contact-us-section"><b>문의하기</b></button>
+                    <button class="nav-button" data-target="news-section"><b>소식</b></button>
                 </nav>
             </div>
         </div>
@@ -1103,7 +1547,7 @@
          REVIEW SECTION HTML
         ==========================================================================
         -->
-        <section id="review-section" class="page-section active">
+        <section id="review-section" class="page-section">
             <div class="title-parent">
       			<div class="title">
         				<img class="star-dynamic-clay-icon" alt="" src="./Review_Images/star-dynamic-clay.png">
@@ -1172,6 +1616,88 @@
                         <img class="event-card-image" alt="카카오의 약속과 책임 이벤트 카드" src="./Coupon_Images/C5.png">
                         <img class="event-card-image" alt="카카오의 약속과 책임 이벤트 카드" src="./Coupon_Images/C6.png">
                     </div>
+                    <!-- PAGINATION CODE START -->
+                    <div class="page-parent">
+                        <div class="page">
+                            <div class="pagination-atomic">
+                                    <img class="icon-size" alt="" src="icon_size.svg">
+                                    <div class="div">이전</div>
+                            </div>
+                            <div class="pagination-atomic1">
+                                    <div class="icon-size1">
+                                        <div class="iconarrow-left">
+                                            <div class="container"></div>
+                                            <img class="vector-icon" alt="" src="./FAQ_Images/Left.png">
+                                        </div>
+                                    </div>
+                                    <div class="div">이전</div>
+                            </div>
+                            <div class="pagination-atomic2 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">1</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">2</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">3</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">4</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">5</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">6</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">7</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">8</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">9</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic3 pagination-number-btn">
+                                    <div class="number">
+                                        <div class="div2">10</div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic12">
+                                    <div class="div">다음</div>
+                                    <div class="icon-size1">
+                                        <div class="iconarrow-left">
+                                                <div class="container"></div>
+                                                <img class="vector-icon1" alt="" src="./FAQ_Images/Right.png">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="pagination-atomic13">
+                                    <div class="div">다음</div>
+                                    <img class="icon-size" alt="" src="icon_size.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PAGINATION CODE END -->
                 </div>
             </div>
         </section>
@@ -1477,11 +2003,7 @@
         </section>
     </main>
 
-    <!-- 
-    ==========================================================================
-     COMMON FOOTER HTML
-    ==========================================================================
-    -->
+    <!-- DESKTOP FOOTER -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div class="footer-content-wrapper">
@@ -1511,6 +2033,40 @@
             </div>
         </div>
     </footer>
+
+    <!-- NEW MOBILE FOOTER -->
+    <footer class="new-mobile-footer">
+        <div class="footer-frame-parent">
+            <div class="footer-links">
+                <b class="b">회사소개</b>
+                <b class="b">이용약관</b>
+                <b class="b">개인정보처리방침</b>
+            </div>
+            <div class="footer-info-group">
+                <div class="footer-info-row">
+                    <div class="info-item-wrapper">
+                        <div class="b">(주)제제컴즈</div>
+                    </div>
+                    <div class="info-item-container">
+                        <div class="b">대표자 : 김준강</div>
+                    </div>
+                    <div class="info-item-frame">
+                        <div class="b">사업자등록번호 : 641-88-00828</div>
+                    </div>
+                </div>
+                <div class="footer-info-row">
+                    <div class="b">통신판매업신고 : 제2021-성남수정-1335호</div>
+                </div>
+                <div class="b">13449 경기 성남시 수정구 달래내로 46, 성남글로벌융합센터 A동 405호</div>
+                <div class="contact-info-parent">
+                    <div class="b">T. 070-4252-5571</div>
+                    <div class="b">E. jejecomms@gmail.com</div>
+                    <div class="b">F. 0508-910-5575</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- 
     ==========================================================================
@@ -1694,26 +2250,58 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
-            // --- MAIN NAVIGATION SCRIPT ---
-            const navButtons = document.querySelectorAll('.header-nav-sub .nav-button');
+
             const pageSections = document.querySelectorAll('.page-section');
+            const navButtons = document.querySelectorAll('.nav-button[data-target]');
 
+            // This function handles showing the correct section and updating nav highlights
+            function showSectionBasedOnHash() {
+                const hash = window.location.hash.substring(1); // Get hash value without '#'
+                const validHashes = {
+                    'review': 'review-section',
+                    'coupon': 'coupon-section',
+                    'faq': 'faq-section',
+                    'contact-us': 'contact-us-section',
+                    'news': 'news-section'
+                };
+                
+                // Determine target section, default to 'review-section'
+                let targetId = validHashes[hash] || 'review-section';
+
+                // Deactivate all sections and buttons first
+                pageSections.forEach(section => section.classList.remove('active'));
+                navButtons.forEach(btn => btn.classList.remove('active-yellow'));
+
+                // Activate the target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                // Activate the corresponding nav buttons
+                navButtons.forEach(btn => {
+                    if (btn.dataset.target === targetId) {
+                        btn.classList.add('active-yellow');
+                    }
+                });
+            }
+
+            // Add click listeners to all sub-navigation buttons
             navButtons.forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
                     const targetId = button.dataset.target;
-                    if (!targetId) return;
-
-                    // Deactivate all sections and buttons
-                    pageSections.forEach(section => section.classList.remove('active'));
-                    navButtons.forEach(btn => btn.classList.remove('active-yellow'));
-
-                    // Activate the target section and button
-                    document.getElementById(targetId).classList.add('active');
-                    button.classList.add('active-yellow');
+                    const newHash = targetId.replace('-section', '');
+                    window.location.hash = newHash;
                 });
             });
 
+            // Listen for hash changes (e.g., browser back/forward buttons)
+            window.addEventListener('hashchange', showSectionBasedOnHash);
+
+            // Initial load: show section based on the current URL hash
+            showSectionBasedOnHash();
+            
             // --- FAQ Section Accordion Script ---
             const faqContainer = document.getElementById('faq-section');
             if (faqContainer) {
@@ -1732,24 +2320,39 @@
                 });
 
                 // --- FAQ Pagination Script ---
-                const paginationContainer = faqContainer.querySelector('.page');
-                if (paginationContainer) {
-                    const pageButtons = paginationContainer.querySelectorAll('.pagination-number-btn');
+                const faqPaginationContainer = faqContainer.querySelector('.page');
+                if (faqPaginationContainer) {
+                    const pageButtons = faqPaginationContainer.querySelectorAll('.pagination-number-btn');
                     pageButtons.forEach(button => {
                         button.addEventListener('click', () => {
-                            // Find the currently active button and deactivate it
-                            const currentActive = paginationContainer.querySelector('.pagination-atomic2');
+                            const currentActive = faqPaginationContainer.querySelector('.pagination-atomic2');
                             if (currentActive) {
                                 currentActive.classList.remove('pagination-atomic2');
                                 currentActive.classList.add('pagination-atomic3');
                             }
                             
-                            // Activate the clicked button
                             button.classList.add('pagination-atomic2');
                             button.classList.remove('pagination-atomic3');
                         });
                     });
                 }
+            }
+
+            // --- Coupon Section Pagination Script ---
+            const couponPaginationContainer = document.querySelector('#coupon-section .page');
+            if (couponPaginationContainer) {
+                const pageButtons = couponPaginationContainer.querySelectorAll('.pagination-number-btn');
+                pageButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const currentActive = couponPaginationContainer.querySelector('.pagination-atomic2');
+                        if (currentActive) {
+                            currentActive.classList.remove('pagination-atomic2');
+                            currentActive.classList.add('pagination-atomic3');
+                        }
+                        button.classList.add('pagination-atomic2');
+                        button.classList.remove('pagination-atomic3');
+                    });
+                });
             }
 
             // --- News Section Carousel & Popup Script ---
@@ -1842,9 +2445,9 @@
             // Logic for Review Section
             if(reviewSection) {
                 // === CONSTANTS ===
-                const STAR_EMPTY_URI = './Review_Images/Empty_Star.svg';
-                const STAR_FULL_URI = './Review_Images/Full_Star.png';
-                const STAR_HALF_URI = './Review_Images/Half_Star.png';
+                const STAR_EMPTY_URI = './Review_Images/Empty_star.svg';
+                const STAR_FULL_URI = './Review_Images/Full_star.png';
+                const STAR_HALF_URI = './Review_Images/Half_star.png';
 
                 // === GET REVIEW ELEMENTS ===
                 const socialLoginButtons = document.querySelectorAll('#login-popup .social-login-button');
@@ -2040,14 +2643,16 @@
             }
         });
     </script><script>
-  // Select all nav buttons with a data-link
-  document.querySelectorAll('.nav-button[data-link]').forEach(button => {
-    button.addEventListener('click', () => {
-      const link = button.getAttribute('data-link');
-      window.location.href = link;
-    });
-  });
-</script>
+      // Select all nav buttons with a data-link (for both desktop and new mobile header)
+      document.querySelectorAll('.nav-button[data-link], .mobile-main-nav-item[data-link]').forEach(button => {
+        button.addEventListener('click', () => {
+          const link = button.getAttribute('data-link');
+          if (link) {
+            window.location.href = link;
+          }
+        });
+      });
+    </script>
 
 </body>
 </html>
