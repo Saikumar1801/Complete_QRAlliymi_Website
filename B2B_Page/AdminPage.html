@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR알리미 관리자 로그인</title>
+    
+    <!-- Using a working Google Font for Korean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+/* General Body & Reset Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif; /* Using the loaded Google Font */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Main Page Container */
+.login-page {
+    width: 100%;
+    min-height: 100vh; /* Ensures the container takes at least the full viewport height */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content */
+    align-items: center; /* Horizontally centers the content */
+    padding: 20px; /* Adds some space on small screens */
+    color: #000;
+}
+
+/* Main content box holding info and form */
+.login-container {
+    display: flex;
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 70px; /* Space between info, divider, and form */
+    width: 100%;
+    max-width: 1100px; /* Prevents it from getting too wide on large screens */
+    margin: auto;
+}
+
+/* Left Side: Logo and Info */
+.info-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.logo-icon {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.sub-heading {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.main-heading {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+/* Vertical Divider */
+.divider {
+    width: 1px;
+    height: 90px;
+    background-color: #000;
+}
+
+/* Right Side: Login Form */
+.login-form-section {
+    width: 325px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Space between title, inputs, and button */
+}
+
+.form-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    width: 100%;
+    text-align: left; /* As per original design's alignment */
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-field {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #e1e1e1;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+}
+
+.input-field::placeholder {
+    color: #b0b0b0;
+    font-weight: bold;
+}
+
+.input-field:focus {
+    outline: 2px solid #000;
+    border-color: #000;
+}
+
+.btn-login {
+    width: 100%;
+    height: 45px;
+    border-radius: 99px;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #333;
+}
+
+/* Footer Notice */
+.footer-notice {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 50px;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.footer-notice b {
+    font-weight: 700;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+/* On screens smaller than 900px */
+@media (max-width: 900px) {
+    .login-container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 40px;
+    }
+
+    .divider {
+        display: none; /* Hide the divider on mobile */
+    }
+
+    .info-section {
+        flex-direction: column; /* Stack logo and text vertically */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .description {
+        align-items: center; /* Center the text */
+    }
+
+    .form-title {
+        text-align: center; /* Center the form title on mobile */
+    }
+
+    .login-form-section {
+        width: 100%;
+        max-width: 350px; /* Give the form a max-width on mobile */
+    }
+}
+</style>
+</head>
+<body>
+
+    <div class="login-page">
+        <main class="login-container">
+            <!-- Left Side: Logo and Description -->
+            <div class="info-section">
+                <!-- Replace with your actual image path -->
+                <img class="logo-icon" alt="QR알리미 로고" src="./B2B_Images/Admin_logo.png">
+                <div class="description">
+                    <p class="sub-heading">주차차량 이동요청 플랫폼</p>
+                    <b class="main-heading">개인정보지킴이, QR알리미</b>
+                </div>
+            </div>
+
+            <!-- Vertical Divider (for desktop) -->
+            <div class="divider"></div>
+
+            <!-- Right Side: Login Form -->
+            <div class="login-form-section">
+                <form class="login-form">
+                    <h2 class="form-title">QR알리미 관리자 페이지</h2>
+                    <div class="input-group">
+                        <input type="text" id="username" name="username" class="input-field" placeholder="아이디" required>
+                        <input type="password" id="password" name="password" class="input-field" placeholder="비밀번호" required>
+                    </div>
+                    <button type="submit" class="btn-login">로그인</button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer-notice">
+            <p>
+                <span>본 페이지는 </span>
+                <b>B2B 전용 페이지</b>
+                <span>로 회원가입 문의는 YESECO 또는 JEJECOMMS로 문의 부탁드립니다. ( jejecomms@gmail.com )</span>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
