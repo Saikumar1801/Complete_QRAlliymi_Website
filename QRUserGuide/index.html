@@ -265,13 +265,13 @@
         /* 6. SECTION-SPECIFIC STYLES */
         /* == SECTION 1: APP INSTALL == */
         #section-app-install .guide-left { width: 388px; display: flex; flex-direction: column; align-items: center; gap: 70px; }
-        #section-app-install .step-line { top: 38px; height: 500px; }
+        #section-app-install .step-line { top: 38px; height: 445px; }
         #section-app-install .step-indicator { position: absolute; left: 0; }
         #section-app-install .step-indicator[data-step="1"] { top: 35px; }
         #section-app-install .step-indicator[data-step="2"] { top: 120px; }
         #section-app-install .step-indicator[data-step="3"] { top: 215px; }
         #section-app-install .step-indicator[data-step="4"] { top: 300px; }
-        #section-app-install .step-indicator[data-step="5"] { top: 520px; }
+        #section-app-install .step-indicator[data-step="5"] { top: 460px; }
         #section-app-install .instruction-item { 
             position: relative; 
             line-height: 30px; 
@@ -279,23 +279,21 @@
             font-weight: 800; 
             color: #999; 
             cursor: pointer;
-            padding: 30px 30px;
+            padding: 30px 20px;
             width: 100%;
         }
         #section-app-install .sub-instructions { padding-left: 15px; margin-top: 10px; }
         
+        /* App Install Section Color Logic (Desktop) */
         #section-app-install .instruction-item.active:not([data-step="4"]) {
             color: #000;
         }
-        
         #section-app-install .instruction-item[data-step="4"].active:not(:has(.sub-instruction-item.active)) > .main-instruction-text {
             color: #000;
         }
-            
         #section-app-install .sub-instruction-item.active {
             color: #000;
         }
-        
         #section-app-install .instruction-item[data-step="4"].active:has(.sub-instruction-item.active) > .main-instruction-text {
             color: #999;
         }
@@ -410,9 +408,11 @@
             padding: 30px 30px; text-align: left; width: 100%; cursor: pointer; color: #999; 
             font-weight: 800; font-size: 18px; line-height: 30px; 
         }
+        /* START: FIX for Coupon section color */
         #section-coupon .instruction-item.active {
             color: #000;
         }
+        /* END: FIX */
         #section-coupon .instruction-item.active::before {
             content: ''; 
             position: absolute; 
@@ -441,9 +441,11 @@
             padding: 30px 10px; cursor: pointer; color: #999; font-weight: 800; 
             font-size: 18px; line-height: 30px; width: 100%;
         }
+        /* START: FIX for Sticker section color */
         #section-sticker .instruction-item.active {
             color: #000;
         }
+        /* END: FIX */
         #section-sticker .instruction-item.active::before {
             content: ''; position: absolute; left: -20px; top: 50%;
             transform: translateY(-50%); width: 0; height: 0;
@@ -453,7 +455,6 @@
 
         #section-sticker .guide-right { width: 450px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
         
-        /* START: Sticker Image Overlay Fix */
         #section-sticker .image-display-wrapper {
             position: relative;
             width: 400px;
@@ -526,7 +527,6 @@
         #section-sticker .image-display-wrapper:has(.step-image[data-image-for="4"].active) .img-0128-icon[data-overlay-for="4"] {
             display: block;
         }
-        /* END: Sticker Image Overlay Fix */
 
         /* 7. FOOTER STYLES */
         .footer-desktop { 
@@ -665,7 +665,7 @@
 </style>
 
 <!-- ==================================================== -->
-<!-- START: ADDED RESPONSIVE STYLES FOR MOBILE -->
+<!-- RESPONSIVE STYLES FOR MOBILE -->
 <!-- ==================================================== -->
 <style>
     @media (max-width: 767px) {
@@ -694,7 +694,7 @@
             text-align: left; font-size: 10px; color: rgba(0, 0, 0, 0.5); font-family: 'NanumSquare', sans-serif;
         }
         .header-mobile .header-inner {
-            max-width: 360px; /* MODIFIED */
+            max-width: 360px;
             width: 100%; 
             display: flex; 
             flex-direction: column; 
@@ -739,8 +739,8 @@
         }
         .sub-header-mobile .parent {
             flex: 1; 
-            max-width: 360px; /* MODIFIED */
-            width: 100%;      /* MODIFIED */
+            max-width: 360px;
+            width: 100%;
             display: flex; 
             flex-direction: row; 
             align-items: center; 
@@ -760,16 +760,15 @@
         }
         .main-content-area-mobile .content-section-mobile {
             display: none;
-            /* MODIFICATION: Added background and padding for full-width bg */
             background-color: #f9f9f9;
             padding: 32px 0;
         }
         .main-content-area-mobile .content-section-mobile.active { display: block; }
         
         .main-content-area-mobile .title {
-            max-width: 360px; /* MODIFIED */
-            width: 100%;      /* MODIFIED */
-            margin: 0 auto;   /* MODIFIED */
+            max-width: 360px;
+            width: 100%;
+            margin: 0 auto;
             display: flex; 
             flex-direction: row; 
             align-items: center;
@@ -787,8 +786,6 @@
             width: 100%;
             margin: 0 auto;
             box-sizing: border-box;
-            /* MODIFICATION: Removed background and adjusted padding */
-            /* background-color: #f9f9f9; */
             display: flex; 
             flex-direction: column; 
             align-items: flex-start;
@@ -814,13 +811,13 @@
             justify-content: center; gap: 16px; text-align: left; color: #999; width: 100%; max-width: 340px;
         }
         .main-content-area-mobile .step-indicators-mobile { width: 21px; position: relative; flex-shrink: 0; }
+        
         .main-content-area-mobile .step-line-mobile {
-            position: absolute; top: 30px; left: 9px;
+            position: absolute; left: 9px;
             border-right: 1.5px solid #fae100; box-sizing: border-box;
             width: 1.5px; 
+            transition: top 0.3s ease, height 0.3s ease;
         }
-        #section-app-install-mobile .step-line-mobile { height: 280px; }
-        #section-coupon-mobile .step-line-mobile, #section-sticker-mobile .step-line-mobile { height: 180px; }
 
         .main-content-area-mobile .step-indicator-mobile {
             position: absolute; left: 0px;
@@ -829,11 +826,13 @@
             width: 21px; height: 21px;
             display: flex; align-items: center; justify-content: center;
             font-size: 11.5px; color: #fae100; font-family: 'KoPubDotum', sans-serif; cursor: pointer; font-weight: 700;
+            transition: top 0.3s ease;
         }
         .main-content-area-mobile .step-indicator-mobile.active { background-color: #fae100; color: #fff; }
 
         .main-content-area-mobile .step-instructions-mobile {
             display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px; flex-grow: 1;
+            position: relative;
         }
         .main-content-area-mobile .instruction-item-mobile {
             align-self: stretch; border-radius: 6px;
@@ -842,7 +841,7 @@
             font-size: 13px; line-height: 1.5; font-weight: 800; cursor: pointer; position: relative;
         }
         .main-content-area-mobile .instruction-item-mobile.active {
-            color: #000; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .main-content-area-mobile .instruction-item-mobile.active::before {
             content: ''; position: absolute; left: -10px; top: 50%;
@@ -851,17 +850,24 @@
         }
         .main-content-area-mobile .sub-instructions-mobile { padding-left: 10px; margin-top: 5px; font-size: 12px;}
 
-        .main-content-area-mobile .image-area-mobile {
-            width: 100%; display: flex; flex-direction: column;
-            align-items: center; justify-content: flex-start; gap: 16px;
-            text-align: left; font-size: 14px; color: #999; max-width: 360px;
+        .main-content-area-mobile .step-image-container-mobile {
+            display: none;
+            width: 100%;
+            margin-top: 24px;
+            margin-bottom: 10px;
         }
+        .main-content-area-mobile .step-image-container-mobile.active {
+            display: block;
+        }
+
         .main-content-area-mobile .video-link-mobile {
             box-shadow: 0.8px 1.6px 3.2px rgba(0, 0, 0, 0.25);
             border-radius: 5.6px; background-color: #fff;
             display: flex; flex-direction: row; align-items: center;
             justify-content: center; padding: 8px 16px; gap: 8px;
+            margin-top: 32px;
         }
+
         .main-content-area-mobile .image-display-mobile {
             align-self: stretch; position: relative;
             height: 480px;
@@ -871,15 +877,44 @@
         }
         .main-content-area-mobile .step-image.active { display: block; }
         
+        #section-app-install-mobile .step-image,
+        #section-coupon-mobile .step-image {
+            object-fit: contain;
+        }
+        
         .main-content-area-mobile .qr-downloads-mobile {
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             gap: 10px;
             width: 100%;
+            margin-top: 16px;
         }
         .main-content-area-mobile .qr-downloads-mobile img { width: 140px; }
+
+        /* START: App Install Section Color Logic (Mobile) */
+        #section-app-install-mobile .instruction-item-mobile.active:not([data-step="4"]) {
+            color: #000;
+        }
+        #section-app-install-mobile .instruction-item-mobile[data-step="4"].active:not(:has(.sub-instruction-item.active)) > .main-instruction-text {
+            color: #000;
+        }
+        #section-app-install-mobile .sub-instruction-item.active {
+            color: #000;
+        }
+        #section-app-install-mobile .instruction-item-mobile[data-step="4"].active:has(.sub-instruction-item.active) > .main-instruction-text {
+            color: #999;
+        }
+        /* END: App Install Section Color Logic (Mobile) */
+        
+        /* START: FIX for Coupon & Sticker section color on Mobile */
+        #section-coupon-mobile .instruction-item-mobile.active,
+        #section-sticker-mobile .instruction-item-mobile.active {
+            color: #000;
+        }
+        /* END: FIX */
+
 
         #section-app-install-mobile .ellipse-div {
             position: absolute;
@@ -934,7 +969,19 @@
             display: flex;
         }
 
-        /* START: Mobile Sticker Image Overlay Fix */
+        #section-coupon-mobile .character-illustration-mobile {
+            position: absolute;
+            width: 140px;
+            left: 0px;
+            bottom: 40px;
+            z-index: 5;
+            display: none;
+            object-fit: contain;
+        }
+        #section-coupon-mobile .step-image[data-image-for="3"].active ~ .character-illustration-mobile {
+            display: block;
+        }
+
         #section-sticker-mobile .image-display-wrapper-mobile {
             position: relative;
             width: 90vw;
@@ -947,14 +994,14 @@
             width: 100%;
             height: 100%;
             margin: 0;
-            border-radius: 50%;
-            background-color: #fff;
+            border-radius: 0%;
+            background-color: #f9f9f9;
             position: relative;
             overflow: hidden;
         }
         #section-sticker-mobile .step-image {
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 0%;
         }
         #section-sticker-mobile .icon-2,
         #section-sticker-mobile .icon,
@@ -992,7 +1039,6 @@
         #section-sticker-mobile .image-display-wrapper-mobile:has(.step-image[data-image-for="4"].active) .img-0128-icon[data-overlay-for="4"] {
             display: block;
         }
-        /* END: Mobile Sticker Image Overlay Fix */
         
         /* --- 4. MOBILE FOOTER --- */
         .footer-mobile {
@@ -1010,8 +1056,8 @@
             font-family: 'NanumSquare', sans-serif;
         }
         .footer-mobile .frame-parent {
-            max-width: 360px; /* MODIFIED */
-            width: 100%;      /* MODIFIED */
+            max-width: 360px;
+            width: 100%;
             display: flex; 
             flex-direction: column;
             align-items: center; 
@@ -1152,13 +1198,13 @@
                             <span>영상으로 확인하기</span><img alt="video icon" src="./images/icon_play.png" style="width:24px; height:24px;">
                         </div>
                         <div class="image-display">
-                            <img src="./images/image_1841.png" alt="Step 1" class="step-image" data-image-for="1">
+                            <img src="./images/1.1.png" alt="Step 1" class="step-image" data-image-for="1">
                             <img src="./images/image_1842.png" alt="Step 2" class="step-image" data-image-for="2">
-                            <img src="./images/image_1843.png" alt="Step 3" class="step-image" data-image-for="3">
+                            <img src="./images/1.3.png" alt="Step 3" class="step-image" data-image-for="3">
                             <img src="./images/image_1844.png" alt="Step 4" class="step-image" data-image-for="4">
-                            <img src="./images/image_1845.png" alt="Step 4.1" class="step-image" data-image-for="4.1">
-                            <img src="./images/image_1846.png" alt="Step 4.2" class="step-image" data-image-for="4.2">
-                            <img src="./images/image_1847.png" alt="Step 5" class="step-image" data-image-for="5">
+                            <img src="./images/D_1.4.1.png" alt="Step 4.1" class="step-image" data-image-for="4.1">
+                            <img src="./images/D_1.4.2.png" alt="Step 4.2" class="step-image" data-image-for="4.2">
+                            <img src="./images/D_1.5.png" alt="Step 5" class="step-image" data-image-for="5">
                             <b class="image-annotation" data-annotation-for="4.1">※ 부착용 QR스티커 QR스캔후, 차량번호 연동 등록</b>
                             <b class="image-annotation" data-annotation-for="4.2">※ 운전자의 차량번호를 입력해주세요.</b>
                             <div class="arrow-group">
@@ -1175,10 +1221,10 @@
                  <div class="guide-container">
                     <div class="guide-left">
                         <div class="image-display">
-                            <img src="./images/image_1848.png" alt="Step 1" class="step-image" data-image-for="1">
-                            <img src="./images/image_1849.png" alt="Step 2" class="step-image" data-image-for="2">
+                            <img src="./images/2.1.png" alt="Step 1" class="step-image" data-image-for="1">
+                            <img src="./images/D_2.2.png" alt="Step 2" class="step-image" data-image-for="2">
                             <img src="./images/image_1850.png" alt="Step 3" class="step-image" data-image-for="3">
-                            <img src="./images/image_1851.png" alt="Step 4" class="step-image" data-image-for="4">
+                            <img src="./images/2.4.png" alt="Step 4" class="step-image" data-image-for="4">
                             <img class="character-illustration" alt="" src="./images/image_1861.png">
                         </div>
                     </div>
@@ -1228,9 +1274,9 @@
                         </div>
                         <div class="image-display-wrapper">
                             <div class="image-display">
-                                <img src="./images/image_1852.png" alt="Step 1" class="step-image" data-image-for="1">
+                                <img src="./images/3.1.png" alt="Step 1" class="step-image" data-image-for="1">
                                 <img src="./images/image_1853.png" alt="Step 2" class="step-image" data-image-for="2">
-                                <img src="./images/image_1854.png" alt="Step 3" class="step-image" data-image-for="3">
+                                <img src="./images/D_3.3.png" alt="Step 3" class="step-image" data-image-for="3">
                                 <img src="./images/qr_scan_4.png" alt="Step 4" class="step-image" data-image-for="4">
                             </div>
                             <img src="./images/image_1855.png" alt="" class="icon-2" data-overlay-for="2">
@@ -1253,19 +1299,42 @@
                 <div class="content-wrapper">
                     <div class="content-inner">
                         <div class="guide-title-mobile"><div>앱 설치 & 차량번호 등록</div></div>
+                        <div class="video-link-mobile js-video-link" data-video-src="./video/qrallimy_install_userguide.mp4">
+                            <div>영상으로 확인하기</div>
+                            <img alt="video icon" src="./images/icon_play.png" style="width:19px; height:19px;">
+                        </div>
                         <div class="steps-wrapper-mobile">
                             <div class="step-indicators-mobile">
                                 <div class="step-line-mobile"></div>
-                                <div class="step-indicator-mobile" data-step="1" style="top: 15px;">1</div>
-                                <div class="step-indicator-mobile" data-step="2" style="top: 80px;">2</div>
-                                <div class="step-indicator-mobile" data-step="3" style="top: 140px;">3</div>
-                                <div class="step-indicator-mobile" data-step="4" style="top: 220px;">4</div>
-                                <div class="step-indicator-mobile" data-step="5" style="top: 300px;">5</div>
+                                <div class="step-indicator-mobile" data-step="1">1</div>
+                                <div class="step-indicator-mobile" data-step="2">2</div>
+                                <div class="step-indicator-mobile" data-step="3">3</div>
+                                <div class="step-indicator-mobile" data-step="4">4</div>
+                                <div class="step-indicator-mobile" data-step="5">5</div>
                             </div>
                             <div class="step-instructions-mobile">
                                 <div class="instruction-item-mobile" data-step="1">QR스캔후, QR알리미 앱 설치</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                        <img src="./images/1.1.png" alt="Step 1" class="step-image active" data-image-for="1">
+                                    </div>
+                                    <div class="qr-downloads-mobile">
+                                        <img src="./images/M_App.png" alt="Google Play">
+                                        <img src="./images/M_GP.png" alt="App Store">
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="2">QR알리미 앱 실행</div>
+                                <div class="step-image-container-mobile">
+                                     <div class="image-display-mobile">
+                                        <img src="./images/1.2.png" alt="Step 2" class="step-image" data-image-for="2">
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="3">계정연동 로그인</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                        <img src="./images/1.3.png" alt="Step 3" class="step-image" data-image-for="3">
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="4">
                                     <span class="main-instruction-text">차량등록 화면</span>
                                     <div class="sub-instructions-mobile">
@@ -1273,34 +1342,20 @@
                                         <div class="sub-instruction-item" data-step="4.2">4-2. 부착용 QR스티커 없을경우</div>
                                     </div>
                                 </div>
-                                <div class="instruction-item-mobile" data-step="5">차량등록 완료 (Main화면)</div>
-                            </div>
-                        </div>
-                        <div class="image-area-mobile">
-                            <div class="video-link-mobile js-video-link" data-video-src="./video/qrallimy_install_userguide.mp4">
-                                <div>영상으로 확인하기</div>
-                                <img alt="video icon" src="./images/icon_play.png" style="width:19px; height:19px;">
-                            </div>
-                            <div class="image-display-mobile">
-                                <img src="./images/image_1841.png" alt="Step 1" class="step-image" data-image-for="1">
-                                <img src="./images/image_1842.png" alt="Step 2" class="step-image" data-image-for="2">
-                                <img src="./images/image_1843.png" alt="Step 3" class="step-image" data-image-for="3">
-                                <img src="./images/image_1844.png" alt="Step 4" class="step-image" data-image-for="4">
-                                <img src="./images/image_1845.png" alt="Step 4.1" class="step-image" data-image-for="4.1">
-                                <img src="./images/image_1846.png" alt="Step 4.2" class="step-image" data-image-for="4.2">
-                                <img src="./images/image_1847.png" alt="Step 5" class="step-image" data-image-for="5">
-                                <div class="ellipse-div"></div>
-                                <!-- MOBILE ANNOTATIONS AND ARROWS -->
-                                <b class="image-annotation" data-annotation-for="4.1">※ 부착용 QR스티커 QR스캔후, 차량번호 연동 등록</b>
-                                <b class="image-annotation" data-annotation-for="4.2">※ 운전자의 차량번호를 입력해주세요.</b>
-                                <div class="arrow-group">
-                                    <div class="arrow-container"><img class="arrow-1" alt="" src="./images/Arrow_1.svg"><div class="arrow-annotation-text">4-1.</div></div>
-                                    <div class="arrow-container"><img class="arrow-2" alt="" src="./images/Arrow_1.svg"><div class="arrow-annotation-text">4-2.</div></div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                        <img src="./images/1.4.png" alt="Step 4" class="step-image" data-image-for="4">
+                                        <img src="./images/1.4.2.png" alt="Step 4.1" class="step-image" data-image-for="4.1">
+                                        <img src="./images/1.4.1.png" alt="Step 4.2" class="step-image" data-image-for="4.2">
+                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="qr-downloads-mobile">
-                                <img src="./images/M_App.png" alt="Google Play">
-                                <img src="./images/M_GP.png" alt="App Store">
+                                <div class="instruction-item-mobile" data-step="5">차량등록 완료 (Main화면)</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                        <img src="./images/1.5.png" alt="Step 5" class="step-image" data-image-for="5">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1314,24 +1369,37 @@
                         <div class="steps-wrapper-mobile">
                             <div class="step-indicators-mobile">
                                 <div class="step-line-mobile"></div>
-                                <div class="step-indicator-mobile" data-step="1" style="top: 20px;">1</div>
-                                <div class="step-indicator-mobile" data-step="2" style="top: 75px;">2</div>
-                                <div class="step-indicator-mobile" data-step="3" style="top: 137px;">3</div>
-                                <div class="step-indicator-mobile" data-step="4" style="top: 200px;">4</div>
+                                <div class="step-indicator-mobile" data-step="1">1</div>
+                                <div class="step-indicator-mobile" data-step="2">2</div>
+                                <div class="step-indicator-mobile" data-step="3">3</div>
+                                <div class="step-indicator-mobile" data-step="4">4</div>
                             </div>
                             <div class="step-instructions-mobile">
                                 <div class="instruction-item-mobile" data-step="1">"메뉴" 클릭</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                       <img src="./images/2.1.png" alt="Step 1" class="step-image active" data-image-for="1">
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="2">"쿠폰등록" 클릭</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                       <img src="./images/2.2.png" alt="Step 2" class="step-image active" data-image-for="2">
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="3">쿠폰번호 입력</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                       <img src="./images/image_1850.png" alt="Step 3" class="step-image active" data-image-for="3">
+                                       <img src="./images/M_Group.png" alt="Character Overlay" class="character-illustration-mobile" data-overlay-for="3">
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="4">"잔여일수" 충전확인</div>
-                            </div>
-                        </div>
-                        <div class="image-area-mobile">
-                            <div class="image-display-mobile">
-                               <img src="./images/image_1848.png" alt="Step 1" class="step-image" data-image-for="1">
-                               <img src="./images/image_1849.png" alt="Step 2" class="step-image" data-image-for="2">
-                               <img src="./images/image_1850.png" alt="Step 3" class="step-image" data-image-for="3">
-                               <img src="./images/image_1851.png" alt="Step 4" class="step-image" data-image-for="4">
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-mobile">
+                                       <img src="./images/2.4.png" alt="Step 4" class="step-image active" data-image-for="4">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1342,37 +1410,51 @@
                 <div class="content-wrapper">
                     <div class="content-inner">
                         <div class="guide-title-mobile"><div>QR스티커 부착방법</div></div>
+                         <div class="video-link-mobile js-video-link" data-video-src="./video/sticker_userguide.mp4">
+                            <div>영상으로 확인하기</div>
+                            <img alt="video icon" src="./images/icon_play.png" style="width:19px; height:19px;">
+                        </div>
                         <div class="steps-wrapper-mobile">
                             <div class="step-indicators-mobile">
                                 <div class="step-line-mobile"></div>
-                                <div class="step-indicator-mobile" data-step="1" style="top: 20px;">1</div>
-                                <div class="step-indicator-mobile" data-step="2" style="top: 75px;">2</div>
-                                <div class="step-indicator-mobile" data-step="3" style="top: 135px;">3</div>
-                                <div class="step-indicator-mobile" data-step="4" style="top: 200px;">4</div>
+                                <div class="step-indicator-mobile" data-step="1">1</div>
+                                <div class="step-indicator-mobile" data-step="2">2</div>
+                                <div class="step-indicator-mobile" data-step="3">3</div>
+                                <div class="step-indicator-mobile" data-step="4">4</div>
                             </div>
                             <div class="step-instructions-mobile">
                                 <div class="instruction-item-mobile" data-step="1">QR인쇄물과 부착용포켓 준비</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-wrapper-mobile">
+                                        <div class="image-display-mobile">
+                                           <img src="./images/3.1.png" alt="Step 1" class="step-image active" data-image-for="1">
+                                       </div>
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="2">부착용 포켓 부착</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-wrapper-mobile">
+                                        <div class="image-display-mobile">
+                                           <img src="./images/3.2.png" alt="Step 2" class="step-image active" data-image-for="2">
+                                       </div>
+                                       </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="3">QR인쇄물 삽입 (밖에서 QR코드 보이게)</div>
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-wrapper-mobile">
+                                        <div class="image-display-mobile">
+                                           <img src="./images/3.3.png" alt="Step 3" class="step-image active" data-image-for="3">
+                                       </div>
+                                    </div>
+                                </div>
                                 <div class="instruction-item-mobile" data-step="4">비고 (차량별 권장 부착위치)</div>
-                            </div>
-                        </div>
-                         <div class="image-area-mobile">
-                            <div class="video-link-mobile js-video-link" data-video-src="./video/sticker_userguide.mp4">
-                                <div>영상으로 확인하기</div>
-                                <img alt="video icon" src="./images/icon_play.png" style="width:19px; height:19px;">
-                            </div>
-                            <div class="image-display-wrapper-mobile">
-                                <div class="image-display-mobile">
-                                   <img src="./images/image_1852.png" alt="Step 1" class="step-image" data-image-for="1">
-                                   <img src="./images/image_1853.png" alt="Step 2" class="step-image" data-image-for="2">
-                                   <img src="./images/image_1854.png" alt="Step 3" class="step-image" data-image-for="3">
-                                   <img src="./images/qr_scan_4.png" alt="Step 4" class="step-image" data-image-for="4">
-                               </div>
-                               <!-- MOBILE STICKER OVERLAYS -->
-                               <img src="./images/image_1855.png" alt="" class="icon-2" data-overlay-for="2">
-                               <img src="./images/image_1856.png" alt="" class="icon" data-overlay-for="3">
-                               <img class="img-0128-icon" alt="" src="./images/IMG_0128.png" data-overlay-for="4">
+                                <div class="step-image-container-mobile">
+                                    <div class="image-display-wrapper-mobile">
+                                        <div class="image-display-mobile">
+                                           <img src="./images/3.4_.png" alt="Step 4" class="step-image active" data-image-for="4">
+                                       </div>
+                                       </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1452,6 +1534,8 @@ function showSection(targetId) {
     mobileSections.forEach(section => {
         section.classList.toggle('active', section.id === mobileTargetId);
     });
+    // Recalculate positions when a section becomes active
+    alignAllMobileSteps();
 }
 
 navLinks.forEach(link => {
@@ -1461,7 +1545,57 @@ navLinks.forEach(link => {
     });
 });
 
-// --- 2. SECTION-SPECIFIC INTERACTIVITY ---
+
+// --- 2. DYNAMIC MOBILE STEP ALIGNMENT ---
+function alignMobileSteps(sectionSelector) {
+    const section = document.querySelector(sectionSelector);
+    if (!section) return;
+
+    const instructions = section.querySelectorAll('.instruction-item-mobile');
+    const indicators = section.querySelectorAll('.step-indicator-mobile');
+    const stepLine = section.querySelector('.step-line-mobile');
+    
+    if (instructions.length === 0 || indicators.length === 0 || !stepLine) return;
+    
+    // Position each indicator vertically centered with its instruction
+    instructions.forEach(instruction => {
+        const step = instruction.dataset.step.split('.')[0]; // Use main step for alignment
+        const indicator = section.querySelector(`.step-indicator-mobile[data-step="${step}"]`);
+        if (!indicator) return;
+
+        const instructionTop = instruction.offsetTop;
+        const instructionHeight = instruction.offsetHeight;
+        const indicatorHeight = indicator.offsetHeight;
+        
+        const newTop = instructionTop + (instructionHeight / 2) - (indicatorHeight / 2);
+        indicator.style.top = `${newTop}px`;
+    });
+
+    // Position and size the connecting line
+    const firstIndicator = indicators[0];
+    const lastIndicator = indicators[indicators.length - 1];
+
+    if (firstIndicator && lastIndicator) {
+        const firstIndicatorTop = parseFloat(firstIndicator.style.top);
+        const lastIndicatorTop = parseFloat(lastIndicator.style.top);
+        const indicatorHeight = firstIndicator.offsetHeight;
+
+        const lineTop = firstIndicatorTop + (indicatorHeight / 2);
+        const lineHeight = lastIndicatorTop - firstIndicatorTop;
+
+        stepLine.style.top = `${lineTop}px`;
+        stepLine.style.height = `${lineHeight}px`;
+    }
+}
+
+function alignAllMobileSteps() {
+    alignMobileSteps('#section-app-install-mobile');
+    alignMobileSteps('#section-coupon-mobile');
+    alignMobileSteps('#section-sticker-mobile');
+}
+
+
+// --- 3. SECTION-SPECIFIC INTERACTIVITY ---
 function initAppInstallSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
@@ -1470,11 +1604,19 @@ function initAppInstallSection(sectionId) {
     const indicators = section.querySelectorAll('.step-indicator, .step-indicator-mobile');
     const images = section.querySelectorAll('.step-image');
     const annotations = section.querySelectorAll('.image-annotation');
-    const qrDownloads = section.querySelector('.qr-downloads-mobile'); 
+    const isMobile = sectionId.includes('-mobile');
 
     function setActiveState(step) {
         const mainStep = Math.floor(step);
         
+        if (isMobile) {
+            section.querySelectorAll('.step-image-container-mobile').forEach(c => c.classList.remove('active'));
+            const container = section.querySelector(`.instruction-item-mobile[data-step="${mainStep}"]`)?.nextElementSibling;
+            if (container?.classList.contains('step-image-container-mobile')) {
+                container.classList.add('active');
+            }
+        }
+
         [instructions, indicators, images, annotations, subInstructions].forEach(nodeList => 
             nodeList.forEach(el => el.classList.remove('active'))
         );
@@ -1488,8 +1630,8 @@ function initAppInstallSection(sectionId) {
             section.querySelector(`.sub-instruction-item[data-step="${step}"], .sub-instruction-item-mobile[data-step="${step}"]`)?.classList.add('active');
         }
 
-        if (qrDownloads) {
-            qrDownloads.style.display = (String(step) === '1') ? 'flex' : 'none';
+        if (isMobile) {
+            setTimeout(alignAllMobileSteps, 0);
         }
     }
 
@@ -1514,21 +1656,24 @@ function initSimpleSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
     const items = section.querySelectorAll('.instruction-item, .instruction-item-mobile, .step-indicator, .step-indicator-mobile');
-    
-    // START: Sticker section overlay logic adjustment
-    const isStickerSection = sectionId.includes('sticker');
-    const overlayWrapperSelector = isStickerSection ? '.image-display-wrapper, .image-display-wrapper-mobile' : null;
-    // END: Sticker section overlay logic adjustment
+    const isMobile = sectionId.includes('-mobile');
 
     function setActiveState(step) {
+        if (isMobile) {
+            section.querySelectorAll('.step-image-container-mobile').forEach(c => c.classList.remove('active'));
+            const container = section.querySelector(`.instruction-item-mobile[data-step="${step}"]`)?.nextElementSibling;
+            if (container?.classList.contains('step-image-container-mobile')) {
+                container.classList.add('active');
+            }
+        }
+        
         section.querySelectorAll('.instruction-item, .instruction-item-mobile, .step-indicator, .step-indicator-mobile, .step-image').forEach(item => 
             item.classList.toggle('active', (item.getAttribute('data-step') || item.getAttribute('data-image-for')) === step)
         );
 
-        // START: Sticker section overlay logic adjustment
-        // The visibility of sticker overlays is now handled purely by CSS using :has(), so no JS change is needed here.
-        // The old JS logic for toggling overlays can be removed as it is now redundant.
-        // END: Sticker section overlay logic adjustment
+        if (isMobile) {
+            setTimeout(alignAllMobileSteps, 0);
+        }
     }
     
     items.forEach(item => {
@@ -1539,7 +1684,7 @@ function initSimpleSection(sectionId) {
 }
 
 
-// --- 3. INITIALIZE ALL SECTIONS ---
+// --- 4. INITIALIZE ALL SECTIONS ---
 document.addEventListener('DOMContentLoaded', function() {
     initAppInstallSection('section-app-install');
     initAppInstallSection('section-app-install-mobile');
@@ -1547,6 +1692,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initSimpleSection('section-coupon-mobile');
     initSimpleSection('section-sticker');
     initSimpleSection('section-sticker-mobile');
+    
+    // Initial alignment and setup resize listener
+    // Use timeout to ensure all images and fonts are loaded, which can affect layout.
+    setTimeout(alignAllMobileSteps, 100);
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(alignAllMobileSteps, 150);
+    });
 });</script>
     <script>// --- VIDEO POPUP LOGIC ---
 function initVideoPopup() {
