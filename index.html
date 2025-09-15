@@ -132,9 +132,9 @@
         position: relative; 
         z-index: 1; 
         width: 100%; 
-        max-width: 1920px;
-        height: 1080px;
+        height: 100vh; /* MODIFIED: Changed from 1080px to fill viewport height */
         font-family: Hanwha, sans-serif;
+        /* max-width: 1920px; /* REMOVED: To allow full screen width */
       }
       .image-1852-icon {
         z-index: 0; 
@@ -144,6 +144,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top; /* MODIFIED: Aligns the image to the bottom, effectively lowering the visible content */
       }
       .text1 {
         display: flex;
@@ -162,7 +163,7 @@
       }
       .carousel {
         position: absolute;
-        bottom: 22.5%;
+        bottom: 7.5%;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 4px;
@@ -251,8 +252,8 @@
         font-size: 9px;
         color: #000;
         box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.25);
-        border-radius: 100px 100px 0 0;
-        margin-top: -215px;
+
+        margin-top: 0px; /* MODIFIED: Moved down */
         padding-top: 0px;
         box-sizing: border-box; 
         z-index: 2;
@@ -466,7 +467,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        border-radius: 15px;
+        border-radius: 0px;
         overflow: hidden;
         background: #000;
       }
@@ -736,7 +737,7 @@
             padding: 0 4px;
         }
         .caption1-nanumsquare1, .div8 {
-            font-size: 10px;
+            font-size: 8px;
             line-height: 10.62px;
         }
         .div8 {
@@ -746,16 +747,48 @@
         .header.scrolled .div8 {
             color: black !important;
         }
+        
+        /* --- HERO SECTION MOBILE: DYNAMIC 'SINKING' EFFECT --- */
+        /* Use viewport height (vh) to make the hero section responsive to different screen heights. */
+        .hero-section {
+            height: 35vh;
+            background-color: #000;
+        }
+        /* Use 'cover' to ensure the image fills the container, providing a seamless background 
+           for the content overlap. 'center' helps frame the image well on mobile. */
+        .hero-section .image-1852-icon {
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Reposition carousel to sit just above the main content's 'sunk' position. */
+        .carousel {
+            padding: 2px 6px;
+            gap: 4px;
+        }
+        .item, .item-child {
+            width: 6px;
+            height: 6px;
+        }
+        .carousel-control-btn {
+            width: 10px;
+            height: 10px;
+            padding: 2px;
+        }
 
         /* --- FRAME PARENT & DOWNLOAD SECTION MOBILE STYLES (UPDATED) --- */
+        /* A negative margin pulls the main content up over the bottom of the hero section,
+           creating the desired 'sinking' visual. This value creates a 50px overlap. */
         .frame-parent {
-            border-radius: 30px 30px 0 0;
-            margin-top: -60px;
+            margin-top: 0px;
         }
         .download-qr-googleplay-parent {
             flex-direction: row;
-            padding: 16px;
+            padding: 10px 20px; 
             gap: 8px;
+        }
+        .image-1850-parent {
+            padding: 30px 20px; 
         }
         .download-qr-googleplay-parent a {
             display: flex;
@@ -839,7 +872,7 @@
         /* --- FOOTER RESPONSIVE STYLES --- */
         .site-footer {
             padding: 24px 16px;
-            font-size: 12px;
+            font-size: 10px;
             text-align: center;
         }
         .footer-content-wrapper {
@@ -941,14 +974,13 @@
             </div>
         </header>
 
-        <div class="hero-section">
-            <img class="image-1852-icon" alt="Background image of a road" src="./Home_Images/Hero_1.png">
+        <div class="hero-section" id="hero-section-link">
+            <img class="image-1852-icon" alt="Background image of a road" src="./Home_Images/Hero_5.png">
             <div class="div1">
             </div>
             <div class="carousel">
                 <div class="carousel-dot">
                     <div class="active"><div class="item"><div class="item-child"></div></div></div>
-                    <div class="inactive"><div class="item"><div class="item-child"></div></div></div>
                     <div class="inactive"><div class="item"><div class="item-child"></div></div></div>
                     <div class="inactive"><div class="item"><div class="item-child"></div></div></div>
                 </div>
@@ -1141,7 +1173,6 @@
         logo: './Home_Images/qr_alliym_name.png'
       };
       
-      // Function to handle header changes, now works for all screen sizes
       function handleHeaderScroll() {
         const isScrolled = window.scrollY > 10;
         
@@ -1156,25 +1187,31 @@
         }
       }
 
-      // Initial check on page load
-      handleHeaderScroll();
-
-      // Add event listeners
       window.addEventListener('scroll', handleHeaderScroll);
       window.addEventListener('resize', handleHeaderScroll);
+      handleHeaderScroll(); // Initial check
       
-      // Carousel functionality
-      const heroImages = [
-        "./Home_Images/Hero_1.png", 
+      // --- START: MODIFIED CAROUSEL FUNCTIONALITY ---
+
+      // Define image sets for desktop and mobile
+      const desktopHeroImages = [
+        "./Home_Images/Hero_5.png", 
         "./Home_Images/Hero_2.png", 
-        "./Home_Images/Hero_1.png", 
-        "./Home_Images/Hero_2.png"
+        "./Home_Images/Hero_3.png"
       ];
+      const mobileHeroImages = [
+        "./Home_Images/Hero_5.png",
+        "./Home_Images/Hero_2.png",
+        "./Home_Images/Hero_3.png"
+      ];
+      
+      let heroImages = []; // This will be populated dynamically
+      
       const imageElement = document.querySelector(".image-1852-icon");
       const dots = document.querySelectorAll(".carousel-dot > div");
       const playPauseBtn = document.getElementById('playPauseBtn');
+      const heroSectionLink = document.getElementById('hero-section-link');
 
-      // Embedded SVG icons for play/pause button
       const pauseIconSrc = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='white'%3E%3Cpath d='M2 1H4V11H2V1Z'/%3E%3Cpath d='M8 1H10V11H8V1Z'/%3E%3C/svg%3E";
       const playIconSrc = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='white'%3E%3Cpath d='M2 1L10 6L2 11V1Z'/%3E%3C/svg%3E";
 
@@ -1183,16 +1220,27 @@
       let isPaused = false;
 
       function updateSlide(index) {
+        if (index >= heroImages.length) {
+            index = 0;
+        }
+        currentIndex = index; // Update global current index
         imageElement.src = heroImages[index];
         dots.forEach((dot, i) => {
           dot.classList.remove("active", "inactive");
           dot.classList.add(i === index ? "active" : "inactive");
         });
+        
+        // --- MODIFIED: Update cursor and clickability based on the current slide ---
+        if (index === 2) { // Index 0 corresponds to Hero_5.png
+          heroSectionLink.style.cursor = 'pointer';
+        } else {
+          heroSectionLink.style.cursor = 'default';
+        }
       }
 
       function nextSlide() {
-        currentIndex = (currentIndex + 1) % heroImages.length;
-        updateSlide(currentIndex);
+        let nextIndex = (currentIndex + 1) % heroImages.length;
+        updateSlide(nextIndex);
       }
 
       function startSlider() {
@@ -1209,9 +1257,21 @@
         playPauseBtn.alt = "Play";
         isPaused = true;
       }
+      
+      // New function to choose the correct image set
+      function setHeroImagesBasedOnScreenWidth() {
+          const isMobile = window.innerWidth <= 768;
+          const newImageSet = isMobile ? mobileHeroImages : desktopHeroImages;
 
-      // Event listener for the play/pause button
-      playPauseBtn.addEventListener('click', () => {
+          // Update only if the image set needs to change
+          if (heroImages.length === 0 || heroImages[0] !== newImageSet[0]) {
+              heroImages = newImageSet;
+              updateSlide(currentIndex); // Refresh the view with the new image
+          }
+      }
+
+      playPauseBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent hero click
         if (isPaused) {
           startSlider();
         } else {
@@ -1219,20 +1279,24 @@
         }
       });
 
-      // Event listeners for the dots
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          currentIndex = index;
-          updateSlide(currentIndex);
+        dot.addEventListener("click", (e) => {
+          e.stopPropagation(); // Prevent hero click
+          updateSlide(index);
           if (!isPaused) {
             startSlider();
           }
         });
       });
 
-      // Initial setup
-      updateSlide(currentIndex);
+      // Add resize listener to swap image sets
+      window.addEventListener('resize', setHeroImagesBasedOnScreenWidth);
+      
+      // Initial Setup
+      setHeroImagesBasedOnScreenWidth(); // Set correct images on page load
       startSlider();
+
+      // --- END: MODIFIED CAROUSEL FUNCTIONALITY ---
       
       // Enhanced Video Player Functionality
       function setupVideoPlayer(containerId) {
@@ -1249,7 +1313,6 @@
         const fullscreenBtn = container.querySelector('.fullscreen-btn');
         const progressContainer = container.querySelector('.progress-container');
         
-        // Format time as MM:SS
         function formatTime(seconds) {
             if (isNaN(seconds)) return "00:00";
             const mins = Math.floor(seconds / 60);
@@ -1261,23 +1324,19 @@
             timeDisplay.textContent = `${formatTime(player.currentTime)} / ${formatTime(player.duration)}`;
         }
 
-        // Update progress bar
         function updateProgress() {
           const percent = (player.currentTime / player.duration) * 100;
           progressBar.style.width = `${percent}%`;
           updateTimeDisplay();
         }
         
-        // Set video progress
         function setProgress(e) {
           const width = this.clientWidth;
           const clickX = e.offsetX;
           const duration = player.duration;
-          
           player.currentTime = (clickX / width) * duration;
         }
         
-        // Toggle play/pause
         function togglePlay() {
           if (player.paused) {
             player.play();
@@ -1300,18 +1359,15 @@
             }
         }
         
-        // Update volume
         function setVolume() {
           player.volume = volumeSlider.value;
         }
         
-        // Toggle mute
         function toggleMute() {
           player.muted = !player.muted;
           volumeSlider.value = player.muted ? 0 : player.volume;
         }
         
-        // Toggle fullscreen
         function toggleFullscreen() {
           if (!document.fullscreenElement) {
             container.requestFullscreen().catch(err => {
@@ -1322,7 +1378,6 @@
           }
         }
         
-        // Event listeners
         playBtn.addEventListener('click', togglePlay);
         playPauseBtn.addEventListener('click', togglePlay);
         player.addEventListener('play', updatePlayButton);
@@ -1336,14 +1391,27 @@
         volumeBtn.addEventListener('click', toggleMute);
         fullscreenBtn.addEventListener('click', toggleFullscreen);
         
-        // Initialize player
         player.volume = 1;
         updatePlayButton();
       }
       
-      // Set up both video players
       setupVideoPlayer('videoContainer1');
       setupVideoPlayer('videoContainer2');
+
+      // --- START: HERO SECTION CLICK NAVIGATION ---
+      heroSectionLink.addEventListener('click', () => {
+        // Only navigate if the current slide is the first one (Hero_3.png)
+        if (currentIndex === 2) {
+            window.location.href = './Community_Page/index.html#review';
+        }
+      });
+
+      const carouselContainer = document.querySelector('.carousel');
+      // Prevent the carousel controls (dots, play/pause) from triggering the hero link
+      carouselContainer.addEventListener('click', (event) => {
+          event.stopPropagation();
+      });
+      // --- END: HERO SECTION CLICK NAVIGATION ---
     </script>
 </body>
 </html>
