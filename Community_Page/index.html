@@ -489,25 +489,21 @@
         #contact-us-section {
             position: relative;
             background-color: #fff;
-            /* height: 1700px;  Removed fixed height */
             overflow: hidden;
             text-align: left;
             font-size: 16px;
             color: rgba(0, 0, 0, 0.5);
             font-family: NanumSquare;
-            padding-bottom: 100px; /* Add some space at the bottom */
         }
        
         #contact-us-section .title-parent {
-            /* Converted from absolute to relative positioning */
             position: relative;
             width: 1240px;
-            margin: 0px auto 0; /* Replaces top/left absolute positioning */
+            margin: 0px auto 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 64px 0px;
             box-sizing: border-box;
             gap: 100px;
             font-size: 30px;
@@ -524,7 +520,7 @@
         #contact-us-section .frame-child { width: 410px; position: relative; border-radius: 50%; border: 1px solid #dcdcdc; box-sizing: border-box; height: 410px; z-index: 0; }
         #contact-us-section .frame-item { width: 357.6px; position: absolute; margin: 0 !important; top: 51.37px; left: calc(50% - 178.83px); border-radius: 50%; border: 0.9px solid #dcdcdc; box-sizing: border-box; height: 357.6px; z-index: 0; }
         #contact-us-section .qa-mockup-child { position: absolute; top: 4.38px; left: 0px; background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8)); width: 460.4px; height: 294.6px; }
-        #contact-us-section .iphone-15-icon { position: absolute; top: 30px; left: calc(50% - 350px); width: 125%; height: auto; object-fit: contain; transform: rotate(15deg) scale(1.25); transform-origin: center; }
+        #contact-us-section .iphone-15-icon { position: absolute; top: 30px; left: calc(50% - 300px); width: 100%; height: auto; object-fit: contain; transform: rotate(15deg) scale(1.25); transform-origin: center; }
         
         #contact-us-section .frame-parent1 { position: absolute; top: 299px; left: calc(50% - 620px); border-radius: 30px 30px 0px 0px; background-color: #f9f9f9; width: 1240px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 50px 0px 100px; box-sizing: border-box; gap: 50px; }
         #contact-us-section .parent1 { border-radius: 30px; background-color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 50px 150px; gap: 50px; text-align: center; font-size: 24px; }
@@ -547,6 +543,12 @@
         #contact-us-section .wrapper5:hover { background-color: #888; }
         #contact-us-section .qr-container { position: relative; line-height: 25px; }
 
+        .contact-mobile-view { display: none; }
+@media (max-width: 767px) {
+    #contact-us-section .check-fill-parent {
+        font-size: 10px;
+    }
+}
 
         /* 
         ==========================================================================
@@ -1327,28 +1329,288 @@
                 gap: 24px;
             }
             
-            #contact-us-section .qa-mockup-parent {
-                height: auto;
+            /* --- START: NEW CONTACT US MOBILE STYLES --- */
+            #contact-us-section .contact-desktop-view {
+                display: none;
             }
-            #contact-us-section .qa-mockup {
-                display: none; /* Hide complex mockup on mobile */
+            .contact-mobile-view {
+                display: flex; /* Overrides global style */
             }
-            #contact-us-section .frame-parent1 {
-                position: static;
+            #contact-us-section .title-parent {
                 width: 100%;
-                border-radius: 15px;
+                background-color: #fff;
+                font-size: 30px;
+                color: #000;
+                font-family: NanumSquare;
+                padding: 0;
+                gap: 0;
             }
-            #contact-us-section .parent1 {
+            #contact-us-section .title {
+                align-self: stretch;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 16px 0px;
+                gap: 8px;
+            }
+            #contact-us-section .icon-mail {
+                width: 24px;
+                height: 24px;
+            }
+            #contact-us-section .text {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            #contact-us-section .title-nanumsquare {
+                font-weight: 800;
+                font-size: 22px;
+                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+            }
+            #contact-us-section .contents {
+                align-self: stretch;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0px 24px;
+                font-size: 8px;
+            }
+            #contact-us-section .image-1860-icon {
+                width: 190.9px;
+                position: relative;
+                max-height: 100%;
+                object-fit: cover;
+            }
+            #contact-us-section .frame-parent {
+                align-self: stretch;
+                border-radius: 20px 20px 0px 0px;
+                background-color: #f9f9f9;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
                 padding: 24px;
+                padding-bottom: 48px;
+                gap: 16px;
+                margin-top: -65px;
+                position: relative;
             }
-            #contact-us-section .group-div,
-            #contact-us-section .frame-parent2 {
+            #contact-us-section .app-icon-parent {
+                align-self: stretch;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            #contact-us-section .app-icon {
+                width: 24px;
+                position: relative;
+                height: 24px;
+                display: none;
+            }
+            #contact-us-section .qr-container {
+                width: 245px;
+                position: relative;
+                line-height: 9.2px;
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+            }
+            #contact-us-section .title-qr-container {
                 width: 100%;
-                position: static;
             }
-             #contact-us-section .parent2 {
-                display: none; /* Hide labels, use placeholders */
+            #contact-us-section .p {
+                margin: 0;
             }
+            #contact-us-section .parent {
+                align-self: stretch;
+                border-radius: 11.04px;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 16px;
+                gap: 15.1px;
+                text-align: center;
+                font-size: 11.35px;
+            }
+            #contact-us-section .div {
+                align-self: stretch;
+                position: relative;
+                font-weight: 800;
+            }
+            #contact-us-section .frame-group {
+                align-self: stretch;
+                position: relative;
+                height: 193px;
+                text-align: right;
+                font-size: 8.67px;
+            }
+            #contact-us-section .group {
+                position: absolute;
+                top: 3.7px;
+                left: 0px;
+                height: 72.8px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 0px;
+            }
+            #contact-us-section .b {
+                align-self: stretch;
+                position: relative;
+                line-height: 13.54px;
+            }
+            #contact-us-section .b2 {
+                position: relative;
+                line-height: 13.54px;
+            }
+            #contact-us-section .frame-container {
+                position: absolute;
+                top: 0px;
+                left: 40.44px;
+                width: 191.6px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 7.6px;
+                text-align: left;
+                font-size: 8px;
+                color: #999;
+            }
+            #contact-us-section .frame-div {
+                align-self: stretch;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 7.6px;
+            }
+            #contact-us-section .wrapper {
+                align-self: stretch;
+                border-radius: 2.71px;
+                background-color: #f9f9f9;
+                border: 0.5px solid #dcdcdc;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 5px 6px;
+            }
+            /* MODIFICATION: Input and Textarea styles for mobile */
+            #contact-us-section .frame-container input.b3,
+            #contact-us-section .frame-container textarea.b3 {
+                width: 100%;
+                border: none;
+                background-color: transparent;
+                padding: 0;
+                margin: 0;
+                font-family: 'NanumSquare', sans-serif;
+                font-size: 8px;
+                color: #333;
+                resize: none;
+                outline: none;
+                line-height: 10.83px;
+                font-weight: 700;
+            }
+            #contact-us-section .frame-container input.b3::placeholder,
+            #contact-us-section .frame-container textarea.b3::placeholder {
+                color: #999;
+                font-weight: 700;
+                line-height: 10.83px;
+            }
+            #contact-us-section .frame-container textarea.b3 {
+                height: 100%;
+            }
+            /* END MODIFICATION */
+            #contact-us-section .b3 {
+                position: relative;
+                line-height: 10.83px;
+            }
+            #contact-us-section .frame {
+                align-self: stretch;
+                border-radius: 2.71px;
+                background-color: #f9f9f9;
+                border: 0.5px solid #dcdcdc;
+                box-sizing: border-box;
+                height: 81.3px;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start; /* Align textarea to top */
+                justify-content: flex-start;
+                padding: 5.4px 7.6px;
+            }
+            #contact-us-section .check-fill-parent {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 8.7px;
+            }
+            
+            /* MODIFICATION: Checkbox styles for mobile */
+            #contact-us-section .contact-mobile-view .check-fill-parent .b6 {
+                position: relative;
+                padding-left: 20px;
+                cursor: pointer;
+                user-select: none;
+                display: inline-flex;
+                align-items: center;
+                min-height: 13px;
+            }
+            #contact-us-section .contact-mobile-view .check-fill-parent .b6::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 13px;
+                height: 13px;
+                border: 1.5px solid #ccc;
+                border-radius: 50%;
+                background-color: #fff;
+                box-sizing: border-box;
+            }
+            #contact-us-section .contact-mobile-view .custom-checkbox:checked + .b6::after {
+                content: '';
+                position: absolute;
+                left: 3px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 7px;
+                height: 7px;
+                background-color: #CE2029;
+                border-radius: 50%;
+            }
+             /* END MODIFICATION */
+
+            #contact-us-section .b6 {
+                position: relative;
+                line-height: 140%;
+            }
+            #contact-us-section .span {
+                color: #b00020;
+            }
+            #contact-us-section .title-wrapper {
+                align-self: stretch;
+                border-radius: 2.71px;
+                background-color: #999;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 5.4px 13px;
+                font-size: 8.67px;
+                color: #fff;
+            }
+            /* --- END: NEW CONTACT US MOBILE STYLES --- */
+
             #news-section .group {
                 width: 100%;
             }
@@ -1769,14 +2031,15 @@
                         <div class="title-nanumsquare">문의하기</div>
                     </div>
                 </div>
-                <div class="qa-mockup-parent">
+                <!-- DESKTOP CONTENT START -->
+                <div class="qa-mockup-parent contact-desktop-view">
                     <div class="qa-mockup">
                         <div class="ellipse-parent">
                             <div class="frame-child"></div>
                             <div class="frame-item"></div>
                         </div>
                         <div class="qa-mockup-child"></div>
-                        <img class="iphone-15-icon" alt="phone mockup" src="./ContactUs_Images/Phone.png">
+                        <img class="iphone-15-icon" alt="phone mockup" src="./ContactUs_Images/Phone2.png">
                     </div>
                     <div class="frame-parent1">
                         <img alt="QR알리미 B2B 고객 안내" src="./ContactUs_Images/Frame_1.png">
@@ -1809,6 +2072,65 @@
                         </div>
                     </div>
                 </div>
+                <!-- DESKTOP CONTENT END -->
+                <!-- MOBILE CONTENT START -->
+                <div class="contents contact-mobile-view">
+                    <img class="image-1860-icon" alt="" src="./ContactUs_Images/M_Phone.png">
+                    <div class="frame-parent">
+                        <div class="app-icon-parent">
+                            <img class="app-icon" alt="" src="./ContactUs_Images/app_icon.svg">
+                            <b class="qr-container">
+                                <span class="title-qr-container">
+                                    <p class="p">소중한 사람의 개인정보를 지켜주세요.</p>
+                                    <p class="p">&nbsp;</p>
+                                    <p class="p">자동차 보험사와 판매사는 가입고객의 소중한 개인정보를 지켜줄 수 있어요!</p>
+                                    <p class="p">아파트 관리사무소는 입주민의 소중한 개인정보를 지켜줄 수 있어요!</p>
+                                    <p class="p">일반기업은 임직원의 소중한 개인정보를 지켜줄 수 있어요!</p>
+                                    <p class="p">&nbsp;</p>
+                                    <p class="p">QR알리미의 기업고객에겐 부담없는 특판가로 제공해드립니다:)</p>
+                                </span>
+                            </b>
+                        </div>
+                        <div class="parent">
+                            <div class="div">빠른 상담 도와드리겠습니다.</div>
+                            <div class="frame-group">
+                                <div class="group">
+                                    <b class="b">이름</b>
+                                    <b class="b">연락처</b>
+                                    <b class="b2">문의 내용</b>
+                                </div>
+                                <div class="frame-container">
+                                    <div class="frame-div">
+                                        <div class="wrapper">
+                                            <!-- MODIFICATION: Changed b to input -->
+                                            <input type="text" class="b3" placeholder="회사명 또는 담당자 이름을 입력해주세요.">
+                                        </div>
+                                        <div class="wrapper">
+                                            <!-- MODIFICATION: Changed b to input -->
+                                            <input type="tel" class="b3" placeholder="회사 또는 담당자 연락처를 번호만 입력해주세요.">
+                                        </div>
+                                        <div class="frame">
+                                            <!-- MODIFICATION: Changed b to textarea -->
+                                            <textarea class="b3" placeholder="문의사항을 입력해주세요. (100자 내외)"></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- MODIFICATION: Changed img to functional checkbox -->
+                                    <div class="check-fill-parent">
+                                        <input type="checkbox" id="mobile-privacy-agree" class="custom-checkbox">
+                                        <label for="mobile-privacy-agree" class="b6">
+                                            <span>개인정보 수집 및 이용 동의 </span>
+                                            <span class="span">(필수)</span>
+                                        </label>
+                                    </div>
+                                    <div class="title-wrapper">
+                                        <b class="b2">문의하기</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MOBILE CONTENT END -->
             </div>
         </section>
 
